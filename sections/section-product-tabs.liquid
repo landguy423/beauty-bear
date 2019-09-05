@@ -1,0 +1,87 @@
+<div class="accordion">
+  <div class="accordion__head">
+    <a href="#tab1">
+      <h3>{{ section.settings.tab1_title }}</h3>
+    </a>
+  </div>
+  <div class="accordion__body" id="tab1">
+    <ul class="product-feature-bullets">
+    {% for block in section.blocks %}
+      {% if block.type == 'feature' %}
+      <li><h4><span class="number">{{ forloop.index }}</span>{{ block.settings.content }}</h4></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion__head">
+    <a href="#tab2">
+      <h3>{{ section.settings.tab2_title }}</h3>
+    </a>
+  </div>
+  <div class="accordion__body" id="tab2">
+    <div class="product-faqs">
+    {% for block in section.blocks %}
+      {% if block.type == 'faq' %}
+      <div class="faq-c">
+        <div class="faq-q faq-tab"><i class="fa fa-plus faq-t"></i> {{ block.settings.question }}</div>
+        <div class="faq-a">
+          {{ block.settings.answer }}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab1_title",
+      "label": "First Tab Title"
+    },
+    {
+      "type": "text",
+      "id": "tab2_title",
+      "label": "Second Tab Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "html",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+  ]
+}
+{% endschema %}

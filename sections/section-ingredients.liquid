@@ -1,0 +1,62 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="page-content section-ingredients">
+    <div class="shell">
+      <div class="section__body">
+        <ul class="list-ingredients">
+          {% for block in blocks %}
+          <li>
+            <h5>{{ block.settings.title }}</h5>
+            <span>{{ block.settings.weight }}</span>
+            <p>{{ block.settings.content }}</p>
+            <img src="{{ block.settings.image | img_url: '60x' }}" />
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "text",
+          "id": "weight",
+          "label": "Weight"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,207 @@
+{% include 'bold-cart' %}
+<div class="page-width page-cart" data-section-id="{{ section.id }}" data-section-type="cart-template">
+<a href="products/hair-skin-nail-vitamins" class="cart__update cart__continue--large visible--mobile" >{{ 'cart.general.continue_shopping' | t }}</a>
+  {% if cart.item_count > 0 %}
+    <div class="section-header page-title text-center">
+      <h1>{{ 'cart.general.title' | t }}</h1>
+    </div>
+    <div class="container">
+      <form action="/cart" method="post" novalidate class="cart">
+        <div class="grid">
+          <div class="grid__item medium-up--two-thirds">
+            <table>
+              <tbody>
+                {% assign variantIdList = "14084719181868,12424546975788" | split:"," %}
+                {% for item in cart.items %}
+                {% include 'bold-cart-item' with item %}
+                  <tr class="cart__row border-bottom line{{ forloop.index }} cart-flex{% if forloop.first %} border-top{% endif %}">
+                    <td class="cart__image-wrapper cart-flex-item">
+                      <a href="{{ item.url | within: collections.all }}">
+                        <img class="cart__image" src="{{ item | img_url: '95x95', scale: 2 }}" alt="{{ item.title | escape }}">
+                      </a>
+                    </td>
+                    <td class="cart__meta small--text-left cart-flex-item">
+                      <div class="cf">
+                      <div class="item__content-wrap">
+                        <div class="list-view-item__title">
+                          <a href="{{ item.url }}">
+                            {% if item.product.title contains 'Auto renew' %}
+                              {% if item.product.title contains 'One Month' %}
+                                Hair Skin Nail Vitamins - One Monthly Subscription
+                              {% elsif item.product.title contains '3 Months' %}
+                                Hair Skin Nail Vitamins - 3 Monthly Subscription
+                              {% elsif item.product.title contains '6 Months' %}
+                                Hair Skin Nail Vitamins - 6 Monthly Subscription
+                              {% else %}
+                                {{ item.product.title }}
+                              {% endif %}
+                            {% else %}
+                            {{ item.product.title }}
+                            {% endif %}
+                            {% if item.quantity > 1 %}
+                              <!--<span class="medium-up--hide"><span class="visually-hidden">{{ 'cart.label.quantity' | t }}</span>(x{{ item.quantity }})</span>-->
+                            {% endif %}
+                          </a>
+                        </div>
+                        {% unless item.variant.title contains 'Default' %}
+                          <div class="cart__meta-text">
+                            {% for option in item.product.options %}
+                              {{ option }}: {{ item.variant.options[forloop.index0] }}<br/>
+                            {% endfor %}
+                          </div>
+                        {% endunless %}
+
+                        {%- assign property_size = item.properties | size -%}
+                        {% if property_size > 0 %}
+                          <div class="cart__meta-text">
+                            {% for p in item.properties %}
+                              {% unless p.last == blank %}
+                                {{ p.first }}:
+
+                                {% comment %}
+                                  Check if there was an uploaded file associated
+                                {% endcomment %}
+                                {% if p.last contains '/uploads/' %}
+                                  <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                                {% else %}
+                                  {{ p.last }}
+                                {% endif %}
+                              {% endunless %}
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+
+                        {{ bold_item_properties }}
+                        {{ bold_recurring_desc }}
+                      </div>
+                        {% assign itemVariantId = item.variant.id | escape %}
+                      {% unless variantIdList contains itemVariantId %}
+                        
+                      <div class="cart__update-wrapper">
+                        <div class="cart__qty">
+                          <div class="qty-minus">
+                            <a href="#"><span class="fa fa-minus"></span></a>
+                          </div>
+                          <input class="cart__qty-input" type="text" name="updates[]" id="updates_{{ item.key }}" data-line="{{ forloop.index }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
+                          <div class="qty-plus">
+                            <a href="#"><span class="fa fa-plus"></span></a>
+                          </div>
+                          <div class="mobile-line-price line-price" data-line="{{ forloop.index }}">
+                            {{ item.price | money }}
+                          </div>
+                        </div>
+                        <!--<input type="submit" name="update" class="cart__update" value="{{ 'cart.general.update' | t }}">-->
+                      </div>
+                      {% endunless %}
+                      </div>
+                      <p class="<!--small--hide --> remove-link">
+                        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove {{ bold_remove_class }}">{{ 'cart.general.remove' | t }}</a>
+                      </p>
+                    </td>
+                    <td class="text-left small--hide line-price" data-line="{{ forloop.index }}">
+                      {% if item.original_line_price != item.line_price %}
+                        <div class="cart-item__original-price"><s>{{ item.original_line_price | money }}</s></div>
+                      {% endif %}
+
+                      <div>
+                        {{ bold_item_line_price | money }}
+                      </div>
+
+                      {% for discount in item.discounts %}
+                        <div class="cart-item__discount">{{ discount.title }}</div>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="grid__item medium-up--one-third text-center">
+            <footer class="cart__footer">
+              <div class="grid">
+                <div class="grid__item text-center subtotal_title small--hide">
+                  <span>{{ 'cart.general.order_summary' | t }}</span>
+                </div>
+                {% if section.settings.cart_notes_enable %}
+                  <div class="grid__item medium-up--one-half cart-note">
+                    <label for="CartSpecialInstructions" class="cart-note__label small--text-center">{{ 'cart.general.note' | t }}</label>
+                    <textarea name="note" id="CartSpecialInstructions" class="cart-note__input">{{ cart.note }}</textarea>
+                  </div>
+                {% endif %}
+                <div class="grid__item text-center small--text-center{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %}">
+                  <div class="clearfix">
+                    <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
+                    <span class="cart__subtotal">{{ bold_cart_total_price | money }}</span>
+                  </div>
+                  {% if cart.total_discounts > 0 %}
+                    <div class="cart__savings">
+                      {{ 'cart.general.savings' | t }}
+                      <span class="cart__savings-amount">{{ cart.total_discounts | money }}</span>
+                    </div>
+                  {% endif %}
+                  <!--­­ Snippet ­ plus_cart_discount_code -->
+                  {% if settings.plus_display_discount_code %}
+                  <script>
+                  (function($) {
+                    $(document).on('page:load page:change', function () {
+                      if (localStorage.getItem('storedDiscount')){
+                        var discountStored = localStorage.getItem('storedDiscount');
+                        $('input[name="discount"]').val(localStorage.getItem('storedDiscount'));
+                      }
+                      $('form[action="/cart"]').on('submit', function(){
+                        var $discountCode = $('input[name="discount"]').val();
+                        localStorage.setItem('storedDiscount', $discountCode);
+                      });
+                    });
+                  })(jQuery);
+                  </script>
+                  <!--<div class="discount clearfix">
+                    <label for="discount" class="left">{{ 'cart.general.discount' | t }}</label>
+                    <input autocomplete="off" type="text" name="discount" class="right" />
+                  </div>-->
+                  {% endif %}
+
+                  <!--<div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>-->
+                  <div class="checkout-button">
+                    <input type="submit" name="checkout" class="btn btn--small-wide btn--blue" value="{{ 'cart.general.checkout' | t }}">
+                  </div>
+                  {{ bold_ro_cart }}
+                  {% if additional_checkout_buttons and show_paypal %}
+                    <!--<span class="additional-checkout-buttons">
+                      <div class="or_checkout">{{ 'cart.general.or' | t }}</div>
+                      <div id="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+                    </span>-->
+                  {% endif %}
+                </div>
+              </div>
+            </footer>
+            <a href="/products/hair-skin-nail-vitamins" class="cart__update cart__continue--large small--hide" >{{ 'cart.general.continue_shopping' | t }}</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  {% else %}
+    <div class="empty-page-content text-center">
+      <h1>{{ 'cart.general.title' | t }}</h1>
+      <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
+      <div class="cookie-message">
+        <p>{{ 'cart.general.cookies_required' | t }}</p>
+      </div>
+      <a href="/" class="btn btn--has-icon-after cart__continue-btn">{{ 'general.404.link' | t }}{% include 'icon-arrow-right' %}</a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Cart page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}

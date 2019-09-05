@@ -1,0 +1,31 @@
+<h1>{{ 'collections.general.title' | t }}</h1>
+
+{% include 'grid-classes', item_for_check: settings.grid_num_collection %}
+<div class="grid grid-collections collection-products">
+	<ul class="collections-list">
+		{% for collection in collections %}
+			{% unless collection.handle == 'frontpage' %}
+				{%- capture collection_image -%}
+					{%- if collection.image -%}
+						{{- collection.image | img_url: 'large' -}}
+					{%- else -%}
+						{{- collection.products[0].featured_image | img_url: 'large' -}}
+					{%- endif -%}
+				{%- endcapture -%}
+
+				<li class="product-item {{grid_item_width}}">
+					<a href="{{ collection.url }}" data-handle="{{ collection.handle }}" >
+						<span class="image" style="background-image: url({{ collection_image }}); " ></span>
+
+						<span class="entry">
+							<h3>{{ collection.title }}</h3>
+
+							{{ collection.description }}
+						</span>
+					</a>
+				</li>
+			
+			{% endunless %}
+		{% endfor %}
+	</ul>
+</div><!-- /.grid grid-collections -->

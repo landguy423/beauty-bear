@@ -1,0 +1,52 @@
+<section class="discover-collection interested">
+  <h2>you might also be interested in...</h2>
+  <div class="product-list">
+    <ul>
+      <li>
+        {{ section.settings.image1 | img_url: '335x' | img_tag }}
+        <span class="product-title">The Bear Facial Sonic Cleanser</span>
+        <p class="product-des">This cute sonic facial brush combines cleansing and anti-aging technology, helping you prevent both breakouts and signs of aging.</p>
+        <a href="/products/{{ section.settings.product1 }}">shop now</a>
+      </li>
+      <li>
+        {{ section.settings.image2 | img_url: '335x' | img_tag }}
+        <span class="product-title">Hair, Skin & Nail Gummy Vitamins</span>
+        <p class="product-des">Our gummy vitamins are designed to provide essential nutrients to support positive hair growth, healthy glowing skin, and stronger nails.</p>
+        <a href="/products/{{ section.settings.product2 }}">shop now</a>
+      </li>
+    </ul>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Interested Collection",
+    "settings": [
+		{
+			"label": "Product 1",
+			"id": "product1",
+			"type": "product"
+		},
+		{
+			"label": "Image for Product 1",
+			"id": "image1",
+			"type": "image_picker"
+		},
+		{
+			"label": "Product 2",
+			"id": "product2",
+			"type": "product"
+		},
+		{
+			"label": "Image for Product 2",
+			"id": "image2",
+			"type": "image_picker"
+		}
+	],
+	"presets": [
+      {
+        "name": "Interested Collection"
+      }
+    ]
+  }
+{% endschema %}
+

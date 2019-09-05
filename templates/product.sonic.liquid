@@ -1,0 +1,206 @@
+<script>
+	{% if product.handle == 'the-bear-facial-sonic-cleanser' %}
+	//location.href = '/products/the-bear-facial-sonic-cleanser';
+	{% endif %}
+</script>
+<section class="section-product product">
+	<div class="shell">
+		<div class="section__inner">
+			<div class="product__logo product__logo--mobile">
+				<h1>{{ product.title }}</h1>
+				{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}
+			</div><!-- /.product__logo product__logo--mobile -->
+			
+            <div class="variant-images hidden-xs hidden-sm">
+			  <ul>
+                {% for image in product.images %}
+                {% if forloop.index > 0 %}
+                <li class="variant__image {% if forloop.index == 1 %}active{%endif%}">
+                  <a href="{{ image | img_url: '1024x' }}">
+                    <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt }}" />
+                  </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                <li class="variant__image" data-selectedid="video">
+                  <a id="video1" video-url="https://vimeo.com/326048438/8f9067dbea"><img src="{{ 'video.png' | asset_url }}" /></a>
+                </li>
+              </ul>
+            </div>
+			<div class="product__images hidden-xs hidden-sm">
+              <ul class="list-images">
+                {% for image in product.images %}
+                {% if forloop.index == 1 %}
+                <li>
+                  <img src="{{ image | img_url: '1024x' }}" class="featured_image" />
+                </li>
+                {% endif %}
+                {% endfor %}
+              </ul><!-- /.list-images -->
+              <div>
+                {% section 'section-features-sonic' %}
+              </div>
+			</div><!-- /.product__images -->
+          	
+            <div class="product__images visible-xs-block visible-sm-block product-image-slider">
+              {% for image in product.images %}
+              	<div>
+              	  <img src="{{ image | img_url: '1024x' }}" />
+              	</div>
+              {% endfor %}
+              <div data-selectedid="video">
+                <a id="video3" video-url="https://vimeo.com/326048438/8f9067dbea">
+                  <img src="{{ 'video.png' | asset_url }}" />
+                </a>
+              </div>
+          	</div>
+          
+          	
+
+			<div class="product__content">
+
+				<form action="/cart/add" class="form-product">
+					<div class="product__logo">
+						<h1>{{ product.title }}</h1>
+						{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}
+					</div><!-- /.product__logo -->
+
+					<div class="product-features-alt">
+						<ul>
+							<li>Gently exfoliates the skin and unclogs pores </li>
+							<li>Removes makeup, dirt, dead skin, sweat and oil</li>
+							<li>Reduces the look of pores and improves complexion</li>
+							<li>Massage the face to promote collagen production</li>
+							<li>Anti-aging mode helps reduce the appearance of wrinkles</li>
+						</ul>
+                      <div class="product-short-exceprt">
+                      	This cute sonic facial brush combines cleansing and anti-aging technology, helping you prevent both breakouts and signs of aging. Suitable for all skin types, it unclogs pores, extracts excess oils, grease, makeup, dead skin and dirt to reveal a smooth and fresh complexion.<br/><br/>
+
+						The lightweight, waterpoof, and portable design means it’s the perfect aid to your skincare routine at home and away.
+                      </div>
+					</div>
+
+					
+					<div class="product__actions">
+                      <span class="product-sonic-price">{{product.price | money}}</span> <input type="submit" value="{{ 'products.product.buy_now' | t | append: '   ' }}" class="btn btn--blue addtocart" />
+					</div><!-- /.product__actions -->
+
+					<div class="visible-xs-block">
+					{% section 'section-features-sonic' %}
+					</div>
+
+					<input type="hidden" name="quantity" value="1">
+					<input type="hidden" id="selected__variant" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-productid="{{product.id}}">
+
+				</form>
+
+				<div class="product__description">
+
+					{{ product.description | split: '<h6' | first }}
+
+				</div><!-- /.product__description -->
+
+			</div><!-- /.product__content -->
+		</div><!-- /.section__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.section-product -->
+
+{% assign product_accordions = product.description | split: '<h6' %}
+{% comment %}
+<div class="accordions product_accordion">
+	{% assign index = 1 %}
+	{% for accordion in product_accordions %}
+		{% if forloop.first %}
+			{% continue %}
+		{% endif %}
+
+		<div class="accordion">
+			<div class="accordion__head">
+				<a href="#accordion-{{ index }}">
+					<h3>{{ accordion | split: '</h6>' | first | split: '>' | last }}</h3>
+				</a>
+			</div><!-- /.accordion_head -->
+
+			<div class="accordion__body" id="accordion-{{ index }}">
+				<div class="medium-up--hide">
+					{% section 'section-nutrition-information' %}
+				</div>
+				<div class="information medium-up--hide for-table">
+					{{ accordion | split: '</h6>' | last }}
+				</div>
+				<div class="information for-description">
+					{{ accordion | split: '</h6>' | last }}
+				</div>
+				<div class="small--hide">
+					{% section 'section-nutrition-information' %}
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- /.accordion__body -->
+		</div><!-- /.accordion -->
+
+		{% assign index = index | plus: 1 %}
+	{% endfor %}
+
+	{% section 'section-product-tabs' %}
+
+	<!--<div class="accordion active">
+		<div class="accordion__head">
+			<a href="#reviews">
+				<h3>{{ 'products.product.reviews' | t }} <span class="tab_reviews_count"></span></h3>
+				<span class="hide_count reviews_tab_stars">
+					<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+				</span>
+			</a>
+		</div>
+
+		<div class="accordion__body" id="reviews" style="display: block;">
+			{% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true %}
+			{% comment %}
+			<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+			{% endcomment %}
+		</div>
+	</div>-->
+
+</div><!-- /.accordions -->
+{% endcomment %}
+
+{% section 'section-featured-product-sonic' %}
+
+{% section 'section-image' %}
+
+{% section 'section-howitwork' %}
+
+{% section 'section-easy-step' %}
+
+{% section 'section-customer-reviews' %}
+
+{% section 'section-instagram' %}
+
+<!-- {% section 'section-as-seen' %} -->
+
+<script>
+  $(document).ready(function(){
+    $("#video1, #video2, #video3").videoPopup();
+    $(".product-image-slider").slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      prevArrow: null,
+      nextArrow: null
+    });
+  });
+  jQuery('.variant__image').on('click', function() {
+    var selected = $(this).data('selectedid');
+    if (selected == 'video') {
+      jQuery('body').css('overflow', 'hidden');
+    }
+  });
+  $('.product-image-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    var selectedSlick = $('#slick-slide0'+nextSlide).data('selectedid');
+    if (selectedSlick == 'video') {
+      jQuery('body').css('overflow', 'hidden');
+    }
+  });
+</script>

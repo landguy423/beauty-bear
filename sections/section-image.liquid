@@ -1,0 +1,37 @@
+{% assign _section = section.settings %}
+
+<section class="section-image">
+  <div class="shell">
+    <div class="section__inner">
+      <img src="{{ _section.intro_image | img_url: '1024x' }}"
+           sizes="(max-width: 375px) 375vw,
+             (max-width: 767px) 767vw,
+             (max-width: 1366px) 1366vw,
+             (max-width: 1919px) 1919vw,
+             2048vw"
+           srcset="{{ _section.intro_image | img_url: '1920x' }} 1920w,
+                   {{ _section.intro_image | img_url: '1366x' }} 1366w,
+                   {{ _section.intro_image | img_url: '768x' }} 768w,
+                   {{ _section.intro_image | img_url: '375x' }} 375w"
+            />
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Introduction Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "intro_image",
+      "label": "Introduction Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Introduction Image"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,86 @@
+<div class="account-wrapper customer-account">
+  <h1>{{ 'customer.account.title' | t | upcase }}</h1>
+  <ul class="links">
+    <li><a href="#" class="active">{{ 'customer.account.order_history' | t | upcase }}</a></li>
+    <li><a href="/tools/checkout/front_end/login">{{ 'customer.account.manage_subscriptions' | t | upcase }}</a></li>
+    <li><a href="/account/addresses">{{ 'customer.account.address_book' | t | upcase }}</a></li>
+  </ul>
+  <div class="form-wrapper">
+    <div class="login-form">
+      
+      {% paginate customer.orders by 20 %}
+          {% if customer.orders.size != 0 %}
+              <div class="accordion-container">
+                {% for order in customer.orders %}
+                <div class="faq-c">
+                  <div class="faq-q">
+                    <div class="order-header">
+                      <div class="order-header-part1">{{ order.created_at | date: "%b %d, %Y" }}</div>
+                      <div class="order-header-part2">{{ order.total_price | money }}</div>
+                      <div class="order-header-part3">{{ order.fulfillment_status_label }}</div>
+                    </div>
+                    <i class="fa fa-chevron-down faq-t"></i>
+                  </div>
+                  <div class="faq-a">
+                    <div class="order-body">  
+                      {% for item in order.line_items %}
+                      {% assign buy_method = item.sku | slice: -1, 1 %}
+                      <div class="order-body-line">
+                        <div class="order-body-part1">
+                          <img src='{{ item.image | img_url: '50x50' }}' alt="product image" />
+                          <div class="product-data">
+                            <p>{{ item.title }}</p>
+                            <p class="buy-method">
+                              {% if buy_method == '1' %}
+                              	1 month supply (one bottle)
+                              {% elsif buy_method == '3' %}
+                              	3 month supply (one bottle)
+                              {% elsif buy_method == '6' %}
+                              	6 month supply (one bottle)
+                              {% else %}
+                              	One-time purchase 
+                              {% endif %}
+                            </p>
+                            <p>{{ order.shipping_methods[0].title }}</p>
+                            <p>Order total</p>
+                          </div>
+                        </div>
+                        <div class="order-body-part2">
+                          <p>{{item.line_price | money}}<br/><br/></p>
+                          <p>{{ order.shipping_methods[0].price | money }}<br/><br/></p>
+                          <p>{{ order.total_price | money }}</p>
+                        </div>
+                        <div class="order-body-part3">
+                          <p>
+                            {{ order.shipping_address.address1 }}<br>
+                            {{ order.shipping_address.address2 }}<br>
+                            {{ order.shipping_address.province }}<br>
+                            {{ order.shipping_address.city }}<br>
+                            {{ order.shipping_address.zip }}
+                          </p>
+                          <p>{{ order.shipping_address.name }}</p>
+                          <p class="estimated-date">Estimated delivery: 24–25 February 2019 {{ order.fulfillment.estimated_delivery_at }}</p>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                
+              </div>
+          {% else %}
+              <div class="no-orders">
+                <img src="{{ 'no-orders.png' | asset_img_url }}" alt="" />
+                <p>{{ 'customer.orders.none' | t | upcase }}</p>
+                <a href="">VIEW THE COLLECTION ></a>
+              </div><!-- /.no-oders -->
+          {% endif %}
+
+          {% include 'pagination' %}
+      {% endpaginate %}
+
+      
+    </div>
+  </div>
+</div>

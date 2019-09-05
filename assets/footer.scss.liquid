@@ -1,0 +1,92 @@
+.footer {
+  background-image: url("{{ 'footer-background.jpg' | asset_img_url: '1024x' }}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 107px 10px 44px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.27;
+  font-weight: normal;
+  .footer__subscribe {
+    font-size: 22px;
+    line-height: 1.27;
+    font-weight: normal;
+    margin-bottom: 60px;
+  }
+  .footer__socials {
+    margin-bottom: 60px;
+  }
+  .footer__nav {
+    font-size: 22px;
+    line-height: 1.27;
+    font-weight: normal;
+    margin-bottom: 60px;
+    ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      list-style: none;
+      margin: 0 -15px;
+      li {
+        padding: 0 30px;
+        a {
+          text-decoration: none;
+          -webkit-transition: opacity 0.4s;
+          -o-transition: opacity 0.4s;
+          transition: opacity 0.4s;
+          text-decoration: underline;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+  .footer__copyright {
+    br {
+    display: none;
+    }
+    p {
+      color: #d9eef6;
+    }
+  }
+  @media (min-width: 1366px) {
+    background-image: url("{{ 'footer-background.jpg' | asset_img_url: '1920x' }}");
+  }
+  @media (max-width: 767px) {
+    background-image: url("{{ 'footer-background-mobile.jpg' | asset_img_url: '767x' }}");
+    padding: 40px 10px;
+    .footer__nav {
+      font-size: 18px;
+      ul {
+        display: block;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin: -5px -15px;
+        li {
+          padding: 5px 15px;
+          display: inline-block;
+        }
+      }
+    }
+    .footer__copyright {
+      font-size: 16px;
+      margin-left: -15px;
+      margin-right: -15px;
+      br {
+        display: block;
+      }
+    }
+  }
+}

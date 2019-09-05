@@ -1,0 +1,115 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="custom-reviews">
+    {% if _section.section_title != blank %}
+    <div class="section__head">
+      <h2>
+        {{ _section.section_title | escape }}
+      </h2>
+    </div><!-- /.section__head -->
+    {% endif %}
+
+    <div class="section__body review-list">
+      {% for block in blocks %}
+      {% assign _block = block.settings %}
+
+      <div class="review-block">
+        <div class="content">
+          <div class="review-top clearfix">
+            <div class="avatar">
+              <img src="{{  _block.avatar | img_url: '73x' }}" />
+            </div>
+            <div class="review-center">
+              <h4>{{  _block.name }}</h4>
+              <p class="time">{{  _block.date }}</p>
+            </div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>{{  _block.comment }} <a class="view-more" href="{% if  _block.more_link %}{% else %}#{% endif %}">Read more</a></p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div><!-- /.section__body -->
+
+    {% if _section.button_label != blank %}
+    <div class="section__actions text-center">
+      <a href="{% if  _section.button_link %}{% else %}#{% endif %}" class="btn btn--pink">
+        {{ _section.button_label | escape | upcase }}
+      </a><!-- /.btn btn--pink -->
+    </div><!-- /.section__actions -->
+    {% endif %}
+  </section><!-- /.section--custom-reviews -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Reviews",
+  "max_blocks" : 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+	{
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+		{
+          "type": "text",
+          "id": "date",
+          "label": "Date"
+        },
+		{
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+		{
+          "type": "url",
+          "id": "more_link",
+          "label": "Read more link"
+        },
+        {
+          "type": "text",
+          "id": "comment",
+          "label": "Review description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %}

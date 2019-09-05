@@ -1,0 +1,43 @@
+{% form 'customer' %}
+  {% if form.posted_successfully? %}
+    <p class="form__success">
+      {{ _section.subscribe_thank_you_message | escape }}
+    </p>
+  {% else %}
+    {% if _section.subscribe_description != blank %}
+      <div class="form__head">
+        <p>
+          {{ _section.subscribe_description | escape | newline_to_br }}
+        </p>
+      </div><!-- /.form__head -->
+    {% endif %}
+
+    <div class="form__inner">
+      {% if form.errors %}
+        <div class="form__errors">
+          {{ form.errors | default_errors }}
+        </div><!-- /.form__errors -->
+      {% endif %}
+
+      <div class="form__body">
+        <div class="form__row">
+          <label for="field-email" class="hidden">{{ 'layout.footer.newsletter.email' | t }}</label>
+
+          <div class="form__controls">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input type="email"
+            class="field"
+            name="contact[email]"
+            id="field-email"
+            placeholder="{{ 'layout.footer.newsletter.email' | t }}"
+            value="{% if customer %}{{ customer.email }}{% endif %}">
+          </div><!-- /.form__controls -->
+        </div><!-- /.form__row -->
+      </div><!-- /.form__body -->
+
+      <div class="form__actions">
+        <input type="submit" name="commit" value="{{ 'layout.footer.newsletter.submit' | t }}" class="btn">
+      </div><!-- /.form__actions -->
+    </div><!-- /.form__inner -->
+  {% endif %}
+{% endform %}

@@ -1,0 +1,28 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+<div class="nutrition_logo">
+  <img src="{{ _section.image | img_url: '330x' }}" />
+  <p>{{ _section.text }}</p>
+  <a href="#" class="medium-up--hide view-nut">VIEW DETAILED VALUES</a>
+</div>
+{% schema %}
+{
+  "name": "Nutritional Information",
+  "class": "nutritional-information-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+  ]
+}
+{% endschema %}

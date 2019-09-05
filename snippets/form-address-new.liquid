@@ -1,0 +1,63 @@
+<div class="form-row field-row-name">
+  <div class="form-col">
+    <select name="address_list" class="address_list">
+      <option value="new" id="addr_new" selected>Add new address...</option>
+      {% for address in customer.addresses %}
+      <option value="{{ address.id }}" id="addr_{{ address.id }}">{{ address.address1 | append: ' ' | append: address.address2 | truncate: 20 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-col">
+    
+  </div>
+</div>
+<div class="form-row field-row-name">
+  <div class="form-col">
+    <label for="field-first-name-{{ idx }}" class="form-label" >{{ 'customer.addresses.first_name' | t }}</label>
+
+    <input type="text" id="field-first-name-{{ idx }}" class="field" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words" placeholder="{{ 'customer.addresses.first_name' | t }}" />
+  </div><!-- /.form-col -->
+
+  <div class="form-col">
+    <label for="field-last-name-{{ idx }}" class="form-label" >{{ 'customer.addresses.last_name' | t }}</label>
+
+    <input type="text" id="field-last-name-{{ idx }}" class="field" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words" placeholder="{{ 'customer.addresses.last_name' | t }}" />
+  </div><!-- /.form-col -->
+</div><!-- /.form-row -->
+
+<div class="form-row field-row-address1">
+  <div class="form-col">
+    <label for="field-address-{{ idx }}" class="form-label" >{{ 'customer.addresses.address1' | t }}</label>
+
+  	<input type="text" id="field-address-{{ idx }}" class="field" name="address[address1]" value="{{form.address1}}" autocapitalize="words" placeholder="{{ 'customer.addresses.address1' | t }}" />
+  </div>
+  <div class="form-col">
+    <label for="field-address2-{{ idx }}" class="form-label" >{{ 'customer.addresses.address2' | t }}</label>
+
+    <input type="text" id="field-address2-{{ idx }}" class="field" name="address[address2]" value="{{form.address2}}" autocapitalize="words" placeholder="{{ 'customer.addresses.address2' | t }}" />
+  </div>
+</div><!-- /.form-row -->
+
+<div class="form-row field-row-city">
+  <div class="form-col">
+    <label for="field-city-{{ idx }}" class="form-label" >{{ 'customer.addresses.city' | t }}</label>
+
+    <input type="text" id="field-city-{{ idx }}" class="field" name="address[city]" value="{{form.city}}" autocapitalize="words" placeholder="{{ 'customer.addresses.city' | t }}" />
+  </div>
+  <div class="form-col">
+    <label for="field-zip-{{ idx }}" class="form-label" >{{ 'customer.addresses.zip' | t }}</label>
+
+    <input type="text" id="field-zip-{{ idx }}" class="field" name="address[zip]" value="{{form.zip}}" autocapitalize="characters" placeholder="{{ 'customer.addresses.zip' | t }}" />
+  </div>
+</div><!-- /.form-row -->
+
+<div class="form-row field-row-country field-select">
+  <div class="form-col">
+    <label for="field-country-{{ idx }}" class="form-label" >{{ 'customer.addresses.country' | t }}</label>
+
+    <select id="field-country-{{ idx }}" class="select" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
+  </div>
+  <div class="form-col">
+    <input type="submit" class="form-btn" value="{{ 'customer.addresses.add_new' | t | upcase }}" >
+  </div>
+</div><!-- /.form-row -->

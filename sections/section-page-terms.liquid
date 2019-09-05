@@ -1,0 +1,46 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="page-content section-terms">
+    <div class="terms-wrapper">
+    {% for block in blocks %}
+      <div class="terms-item">
+        <div class="terms-title">{{ block.settings.title }}</div>
+        <div class="terms-content">{{ block.settings.content }}</div>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "TERMS",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "term",
+      "name": "TERM",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TERMS"
+    }
+  ]
+}
+{% endschema %}

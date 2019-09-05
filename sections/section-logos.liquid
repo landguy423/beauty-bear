@@ -1,0 +1,69 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="section-logos">
+    <div class="shell">
+      {% if _section.title != blank %}
+        <div class="section__head">
+          <h2>{{ _section.title | escape }}</h2>
+        </div><!-- /.section__head -->
+      {% endif %}
+
+      <div class="section__body">
+        <ul class="list-logos">
+          {% for block in blocks %}
+            {% assign _block = block.settings %}
+
+            {% if _block.logo != blank %}
+              <li>
+                {% if _block.link != blank %}
+                  {% assign block_link = _block.link | escape %}
+                  {{ _block.logo | img_url: '1024x' | img_tag | link_to: block_link }}
+                {% else %}
+                  {{ _block.logo | img_url: '1024x' | img_tag }}
+                {% endif %}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul><!-- /.list-logos -->
+      </div><!-- /.section__body -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-logos -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Setion Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logos"
+    }
+  ]
+}
+{% endschema %}

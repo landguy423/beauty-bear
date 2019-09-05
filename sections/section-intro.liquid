@@ -1,0 +1,247 @@
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <div class="slider__clip">
+    <div class="slider__slides">
+      {% for block in blocks %}
+        {% assign _block = block.settings %}
+
+        <a href="{{ _block.button_link | escape }}" class="slider__link">
+          {% if _block.bg_image != blank %}
+          <style>
+            .slider__slide--{{ block.id }} {
+              background-image: url('{{ _block.bg_image | img_url: 'master' }}');
+            }
+            .slider-mobile__image {
+              display: none;
+            }
+            @media (max-width: 1023px) {
+              .slider__slide--{{ block.id }} {
+/*                 background-image: url('{{ _block.bg_mobile_image | img_url: '750x' }}'); */
+                background-image: linear-gradient(to top, #e95183, #eb8097 64%, #f9d9e5);
+              }
+              .slider-mobile__image {
+                display: block;
+                margin: 0 auto;
+                width: 40%;
+                max-height: 650px;
+              }
+            }
+          </style>
+          {% endif %}
+        <div class="slider__slide slider__slide--{{ block.id }}">
+          {% if _block.top_left != blank or _block.bottom_left != blank or _block.top_right != blank or _block.bottom_right != blank %}
+            <div class="slider__slide-images">
+              {% if _block.top_left != blank %}
+                <img  src="{{ _block.top_left | img_url: '1024x' }}"
+                alt="{{ _block.top_left.alt }}"
+                sizes="(min-width: 960px) 450px, (min-width: 720px) 50vw, 100vw"
+                srcset="{% if _block.top_left.width > 640 %}{{ _block.top_left | img_url: '640x' }} 640w{% endif %}
+                      {% if _block.top_left.width > 720 %},{{ _block.top_left | img_url: '720x' }} 720w{% endif %}
+                      {% if _block.top_left.width > 900 %},{{ _block.top_left | img_url: '900x' }} 900w{% endif %}"
+                 />
+              {% endif %}
+
+              {% if _block.bottom_right != blank %}
+                <img  src="{{ _block.bottom_right | img_url: '1024x' }}"
+                alt="{{ _block.bottom_right.alt }}"
+                sizes="(min-width: 960px) 450px, (min-width: 720px) 50vw, 100vw"
+                srcset="{% if _block.bottom_right.width > 640 %}{{ _block.bottom_right | img_url: '640x' }} 640w{% endif %}
+                      {% if _block.bottom_right.width > 720 %},{{ _block.bottom_right | img_url: '720x' }} 720w{% endif %}
+                      {% if _block.bottom_right.width > 900 %},{{ _block.bottom_right | img_url: '900x' }} 900w{% endif %}"
+                 />
+              {% endif %}
+
+              {% if _block.top_right != blank %}
+                <img  src="{{ _block.top_right | img_url: '1024x' }}"
+                alt="{{ _block.top_right.alt }}"
+                sizes="(min-width: 960px) 450px, (min-width: 720px) 50vw, 100vw"
+                srcset="{% if _block.top_right.width > 640 %}{{ _block.top_right | img_url: '640x' }} 640w{% endif %}
+                      {% if _block.top_right.width > 720 %},{{ _block.top_right | img_url: '720x' }} 720w{% endif %}
+                      {% if _block.top_right.width > 900 %},{{ _block.top_right | img_url: '900x' }} 900w{% endif %}"
+                 />
+              {% endif %}
+
+              {% if _block.bottom_left != blank %}
+                <img  src="{{ _block.bottom_left | img_url: '1024x' }}"
+                alt="{{ _block.bottom_left.alt }}"
+                sizes="(min-width: 960px) 450px, (min-width: 720px) 50vw, 100vw"
+                srcset="{% if _block.bottom_left.width > 640 %}{{ _block.bottom_left | img_url: '640x' }} 640w{% endif %}
+                      {% if _block.bottom_left.width > 720 %},{{ _block.bottom_left | img_url: '720x' }} 720w{% endif %}
+                      {% if _block.bottom_left.width > 900 %},{{ _block.bottom_left | img_url: '900x' }} 900w{% endif %}"
+                 />
+              {% endif %}
+            </div><!-- /.slider__slide-images -->
+          {% endif %}
+
+          <div class="slider__slide-inner">
+            {% if _block.slide_image != blank and _block.slide_image_mobile != blank %}
+              <div class="slider__slide-image">
+                <img  src="{{ _block.slide_image | img_url: '1024x' }}"
+                alt="{{ _block.slide_image.alt }}"
+                class="desktop"
+                sizes="(max-width: 375px) 375vw,
+                  (max-width: 767px) 767vw,
+                  (max-width: 1366px) 1366vw,
+                  (max-width: 1919px) 1919vw,
+                  2048vw"
+                srcset="{{ _block.slide_image | img_url: '1920x' }} 1920w,
+                        {{ _block.slide_image | img_url: '1366x' }} 1366w,
+                        {{ _block.slide_image | img_url: '768x' }} 768w,
+                        {{ _block.slide_image | img_url: '375x' }} 375w"
+                 />
+                 <img  src="{{ _block.slide_image_mobile | img_url: '1024x' }}"
+                 alt="{{ _block.slide_image_mobile.alt }}"
+                 class="mobile"
+                 sizes="(max-width: 375px) 375vw,
+                   (max-width: 767px) 767vw,
+                   (max-width: 1366px) 1366vw,
+                   (max-width: 1919px) 1919vw,
+                   2048vw"
+                 srcset="{{ _block.slide_image_mobile | img_url: '1920x' }} 1920w,
+                         {{ _block.slide_image_mobile | img_url: '1366x' }} 1366w,
+                         {{ _block.slide_image_mobile | img_url: '768x' }} 768w,
+                         {{ _block.slide_image_mobile | img_url: '375x' }} 375w"
+                  />
+              </div><!-- /.slider__slide-image -->
+            {% endif %}
+
+            <div class="slider__slide-content">
+              {% if _block.slide_title != blank %}
+                <div class="slider__slide-title">
+                  <h3>
+                    {{ _block.slide_title | newline_to_br | replace: '<p>', '' | replace: '</p>', '' }}
+                  </h3>
+                </div><!-- /.slider__slide-title -->
+              {% endif %}
+              <div class="slider-mobile__image">
+                <img src="{{ _block.bg_mobile_image | img_url: '500x' }}" />
+              </div>
+
+              {% if _block.slide_description != blank %}
+                <div class="slider__slide-description hidden-sm hidden-xs">
+                  <p>
+                    {{ _block.slide_description | escape | newline_to_br }}
+                  </p>
+                </div><!-- /.slider__slide-description -->
+              {% endif %}
+
+              {% if _block.button_link != blank and _block.button_label != blank %}
+                <div class="slider__slide-button">
+                  <button class="btn btn--blue btn--shadow">
+                    {{ _block.button_label | escape }}
+                  </button><!-- /.btn -->
+                </div><!-- /.slider__slide-button -->
+              {% endif %}
+            </div><!-- /.slider__slide-content -->
+
+            {% if _block.button_link != blank and _block.button_label != blank %}
+              <div class="slider__slide-actions">
+                <button class="btn btn--blue">
+                  {{ _block.button_label | escape }}
+                </button>
+              </div><!-- /.slider__slide-actions -->
+            {% endif %}
+
+            {% if _block.slide_description != blank %}
+              <div class="slider__slide-description visible-sm-block visible-xs-block">
+                <p>
+                  {{ _block.slide_description | escape | newline_to_br }}
+                </p>
+              </div><!-- /.slider__slide-description -->
+            {% endif %}
+          </div><!-- /.slider__slide-inner -->
+        </div><!-- /.slider__slide -->
+      </a>
+      {% endfor %}
+    </div><!-- /.slider__slides -->
+  </div><!-- /.slider__clip -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Intro",
+  "class": "slider-intro",
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "slide_title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_image_mobile",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_mobile_image",
+          "label": "Background Mobile Image"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Stickers"
+        },
+        {
+          "type": "image_picker",
+          "id": "top_left",
+          "label": "Top Left Sticker"
+        },
+        {
+          "type": "image_picker",
+          "id": "bottom_left",
+          "label": "Bottom Left Sticker"
+        },
+        {
+          "type": "image_picker",
+          "id": "top_right",
+          "label": "Top Right Sticker"
+        },
+        {
+          "type": "image_picker",
+          "id": "bottom_right",
+          "label": "Bottom Right Sticker"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Intro"
+    }
+  ]
+}
+{% endschema %}

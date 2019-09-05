@@ -1,0 +1,16 @@
+{% for variant in product.variants %}
+<div class="accordions accordions--product-plans">
+  <div class="plan-radios">
+    <a class="variant_select" data-variant-id="{{ variant.id }}" data-variant-image="{{ variant | img_url: '1024x' }}" href="#{{ forloop.index }}">
+      <label for="{{ forloop.index }}_radio-2" class="radio one-time {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}">
+        <input type="radio" name="purchase_type" value="sample_pack" id="{{ forloop.index }}_radio-2" data-variant="{{ variant.id }}" {% if variant.id == product.selected_or_first_available_variant.id %} checked {% endif %}>
+
+        <span for="{{ forloop.index }}_radio-2">
+          <h5>{{ variant.options[0] }} (SET OF 5)</h5>
+          <span class="bobble-price">{{ variant.price | money }}</span>
+        </span>
+      </label>
+    </a>
+  </div>
+</div>
+{% endfor %}

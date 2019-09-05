@@ -1,0 +1,57 @@
+<div class="account-wrapper customer-login">
+  <h1>{{ 'customer.register.title' | t | upcase }}</h1>
+  <div class="form-wrapper">
+    <div class="login-form register-form">
+      
+    
+      {% form 'create_customer', class: 'form form-default form-register' %}
+          {% capture error_first_name %}{% if form.errors contains "first_name" %}error{% endif %}{% endcapture %}
+          {% capture error_last_name %}{% if form.errors contains "last_name" %}error{% endif %}{% endcapture %}
+          {% capture error_email %}{% if form.errors contains "email" %}error{% endif %}{% endcapture %}
+          {% capture error_password %}{% if form.errors contains "password" %}error{% endif %}{% endcapture %}
+
+          {% if form.errors %}
+              <div class="form-notice error">
+                  {{ form.errors | default_errors }}
+              </div><!-- /.form-notice -->
+          {% endif %}
+
+          <div class="form-body">
+              <div class="form-row">
+                  <label for="field-first-name" class="form-label">{{ 'customer.register.first_name' | t }}</label>
+
+                  <input type="text" name="customer[first_name]" id="field-first-name" class="field {{ error_first_name }}" placeholder="{{ 'customer.register.first_name' | t }}" autocapitalize="words" value="{{ form.first_name }}" autofocus />
+              </div><!-- /.form-row -->
+
+              <div class="form-row">
+                  <label for="field-last-name" class="form-label">{{ 'customer.register.last_name' | t }}</label>
+
+                  <input type="text" name="customer[last_name]" id="field-last-name" class="field {{ error_last_name }}" placeholder="{{ 'customer.register.last_name' | t }}"  autocapitalize="words" value="{{ form.last_name }}" />
+              </div><!-- /.form-row -->
+
+              <div class="form-row">
+                  <label for="field-email" class="form-label">{{ 'customer.register.email_address' | t }}</label>
+
+                  <input type="email" name="customer[email]" id="field-email" class="field {{ error_email }}" placeholder="{{ 'customer.register.email' | t }}" autocorrect="off" autocapitalize="off" value="{{ form.email }}" />
+              </div><!-- /.form-row -->
+
+              <div class="form-row">
+                  <label for="field-password" class="form-label">{{ 'customer.register.password' | t }}</label>
+				  <span class="link link-forgot-password">
+                    {{ 'customer.register.password_mask' | t }}
+                  </span>
+                  <input type="password" name="customer[password]" id="field-password" class="field {{ error_password }}" placeholder="{{ 'customer.register.password' | t }}" value="" />
+              </div><!-- /.form-row -->
+          </div><!-- /.form-body -->
+
+          <div class="form-action clear">
+            <input type="submit" class="form-btn submit" value="{{ 'customer.register.submit' | t }}" >
+
+            <span class="link link-return">
+              Existing Customer? {{ 'customer.login.title' | t | customer_login_link }}
+            </span>
+          </div><!-- /.form-actions -->
+      {% endform %}
+    </div>
+  </div>
+</div>

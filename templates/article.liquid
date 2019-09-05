@@ -1,0 +1,33 @@
+<div class="blog clear">
+	<div class="content">
+		<article class="article">
+			<header class="article-head">
+				<h2 class="article-title">{{ article.title }}</h2><!-- /.article-title -->
+
+				{% if article.image %}
+					<img src="{{ article.image | img_url: '1024x1024' }}" alt="" />
+				{% endif %}
+				
+				<div class="article-meta">
+					{% assign published_at = article.published_at | date: format: 'short' %}
+					{{ 'blogs.article.posted_on_date' | t: date: published_at }}
+
+					{% if article.comments_enabled? %}, 
+						{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+					{% endif %}
+				</div><!-- /.article-meta -->
+			</header><!-- /.article-head -->
+
+			<div class="article-body">
+				<div class="article-entry">
+					{{ article.content }}
+				</div><!-- /.article-entry -->
+			</div><!-- /.article-body -->
+
+		</article><!-- /.article -->
+
+		{% if blog.comments_enabled? %}
+			{% include 'blog-comments' %}
+		{% endif %}
+	</div><!-- /.content -->
+</div><!-- /.blog -->

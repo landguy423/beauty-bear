@@ -1,0 +1,18 @@
+{% capture theme_title %}
+	{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} | {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}
+	{% endunless %}
+{% endcapture %}
+
+{% capture theme_styles %}
+	{{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+	{{ 'bundle.scss' | asset_url | stylesheet_tag }}
+{% endcapture %}
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+{{ 'jquery.currencies.min.js' | asset_url | script_tag }}
+{% capture theme_scripts %}
+	{{ 'bundle.js' | asset_url | script_tag }}
+{% endcapture %}

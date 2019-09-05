@@ -1,0 +1,37 @@
+{% form 'activate_customer_password', class: 'form form-activate-customer form-default' %}
+	{% capture error %}{% if form.errors contains "email" %}error{% endif %}{% endcapture %}
+
+	<div class="form-head">
+		<h1>{{ 'customer.activate_account.title' | t }}</h1>
+
+		<p>{{ 'customer.activate_account.subtext' | t }}</p>
+	</div><!-- /.form-head -->
+
+	{% if form.errors %}
+		<div class="form-notice">
+			{{ form.errors | default_errors }}
+		</div><!-- /.form-notice -->
+	{% endif %}
+
+	<div class="form-body">
+		<div class="form-row">
+			<label for="field-customer-password" class="form-label">{{ 'customer.activate_account.password' | t }}</label>
+
+			<input type="password" value="" name="customer[password]" id="field-customer-password" class="field">
+		</div><!-- /.form-row -->
+
+		<div class="form-row">
+			<label for="field-customer-password-confirm" class="form-label">{{ 'customer.activate_account.password_confirm' | t }}</label>
+
+			<input type="password" value="" name="customer[password_confirmation]" id="field-customer-password-confirm" class="field">
+		</div><!-- /.form-row -->
+	</div><!-- /.form-body -->
+
+	<div class="form-action">
+		<input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
+
+		<input type="submit" class="btn" value="{{ 'customer.activate_account.submit' | t }}">
+	
+		<input type="submit" class="btn cancel" name="decline" value="{{ 'customer.activate_account.cancel' | t }}">
+	</div><!-- /.form-action -->
+{% endform %}

@@ -1,0 +1,53 @@
+{% assign discount_percentage = subscription_product.discount_percentage | round: 2 %}
+{% assign discount_floor = subscription_product.discount_percentage | floor %}
+{% if discount_percentage == discount_floor %}
+  {% assign discount_percentage = discount_floor %}
+{% endif %}
+
+{% if product.variants.size > 0 %}
+
+  {% for product_option in product.options_with_values %}
+    {% assign option_downCased = product_option.name | downcase %}
+    {% if option_downCased == "supply" %}
+    	{% assign product_contains_subscriptions = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if product_contains_subscriptions %}
+    <div class="product__plan-title">
+      <p>{{ 'products.product.select_plan' | t }}</p>
+    </div><!-- /.product__plan-title -->
+  {% endif %}
+
+  <div class="accordions accordions--product-plans">
+      {% for variant in product.variants %}
+        {% assign variant_handled = variant.title | handle %}
+        {% assign variant_title = variant.title | handle | plus: 0 %}
+        {% assign months_supply = variant_title | divided_by: 60 | ceil %}
+        {% if variant_handled != 'default-title' %}
+        <div class="plan-radios">
+          <label for="{{ forloop.index }}_radio-2" class="radio {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}">
+            <input type="radio" name="purchase_type" value="onetime" id="{{ forloop.index }}_radio-2" data-variant="{{ variant.id }}" data-image="{{ variant | img_url: '480x' }}" {% if variant.id == product.selected_or_first_available_variant.id %} checked {% endif %}>
+            <span for="{{ forloop.index }}_radio-2">
+              <h5>
+                {{ months_supply }}
+                {% if months_supply == 1 %} {{ 'products.product.month' | t }} {% else %} {{ 'products.product.months' | t }} {% endif %} {{ 'products.product.supply' | t }}
+                <span class="compare-price">{{ variant.compare_at_price | money }}</span><span class="normal-price">{{ variant.price | money }}</span>
+              </h5>
+              {% if variant.compare_at_price %}
+              <p class="price-note">
+                {% assign extra_money = variant.compare_at_price | minus: variant.price %}
+                {% if forloop.index == 2 %}
+                  &hearts; Popular (save {{ extra_money | money }})
+                {% elsif forloop.index == 3 %}
+                  &hearts; Best value(save {{ extra_money | money }})
+                {% endif %}
+              </p>
+              {% endif %}
+            </span>
+          </label>
+        </div>
+        {% endif %}
+      {% endfor %}
+  </div><!-- /.accordions -->
+{% endif %}

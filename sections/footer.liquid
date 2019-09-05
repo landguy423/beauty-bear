@@ -1,0 +1,66 @@
+{% assign _section = section.settings %}
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__subscribe">
+      <div class="form-newsletter">
+        {% include 'newsletter' %}
+      </div><!-- /.form-newsletter -->
+    </div><!-- /.footer__subscribe -->
+
+    <div class="footer__socials">
+      {% include 'socials' %}
+    </div><!-- /.footer__socials -->
+
+    {% if _section.navigation != blank %}
+      {% assign navigation = linklists[_section.navigation] %}
+      <div class="footer__nav">
+        <ul>
+          {% for item in navigation.links %}
+            <li>
+              <a href="{{ item.url | escape }}">{{ item.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div><!-- /.footer__nav -->
+    {% endif %}
+
+    {% if _section.copyright != blank %}
+      <div class="footer__copyright">
+        {{ _section.copyright | newline_to_br | replace: '<p>', '' | replace: '</p>', '' }}
+      </div><!-- /.footer__copyright -->
+    {% endif %}
+  </div><!-- /.shell -->
+</footer><!-- /.footer -->
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "textarea",
+      "id": "subscribe_description",
+      "label": "Form Description"
+    },
+    {
+      "type": "textarea",
+      "id": "subscribe_thank_you_message",
+      "label": "Form Thank You Message"
+    },
+    {
+      "type": "link_list",
+      "id": "navigation",
+      "label": "Navigation"
+    },
+    {
+      "type": "richtext",
+      "id": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,88 @@
+<div class="account-wrapper customer-account">
+  <h1>{{ 'customer.account.title' | t | upcase }}</h1>
+  <ul class="links">
+    <li><a href="/account/orders">{{ 'customer.account.order_history' | t | upcase }}</a></li>
+    <li><a href="/tools/checkout/front_end/login">{{ 'customer.account.manage_subscriptions' | t | upcase }}</a></li>
+    <li><a href="/account/addresses" class="active">{{ 'customer.account.address_book' | t | upcase }}</a></li>
+  </ul>
+  <div class="form-wrapper">
+    <div class="login-form">
+
+      {% paginate customer.addresses by 5 %}
+          <div class="addresses">
+            {% assign form_class = 'form form-default form-add-address' %}
+            {% capture address_select %}  
+            <select name="address_list" id="address_list">
+              <option value="new" id="addr_new">Add new address...</option>
+              {% for address in customer.addresses %}
+                <option value="{{ address.id }}" id="addr_{{ address.id }}" {% if address.id == customer.default_address.id %}selected{% endif %}>{{ address.address1 | append: address.address2 | truncate: 20 }}</option>
+              {% endfor %}
+            </select>
+            {% endcapture %}
+              {% form 'customer_address', customer.new_address, class: form_class  %}
+                  {% assign idx = form.id %}
+
+                  {% if form.errors %}
+                      <div class="form-notice">
+                          {{ form.errors | default_errors }}
+                      </div><!-- /.form-notice -->
+                  {% endif %}
+
+                  <div class="form-body">
+                      {% include 'form-address-new' %}
+                  </div><!-- /.form-body -->
+              {% endform %}
+
+              {% for address in customer.addresses %}
+                  {% capture default %}{% if address.id == customer.default_address.id %}true{% endif %}{% endcapture %}
+                  {% assign class = '' %}
+
+                  {% if default != blank %}
+                      {% assign class = class | append: ' ' | append: 'default' %}
+                  {% endif %}
+
+                  <div class="accordion-section{{ class }}">
+                      <div class="accordion-body">
+
+                          {% assign form_class = 'form form-default form-edit-address ' | append: class | append : ' edit-address-' | append : address.id %}
+                          {% form 'customer_address', address, class: form_class  %}
+                              {% assign idx = form.id %}
+
+                              {% if form.errors %}
+                                  <div class="form-notice">
+                                      {{ form.errors | default_errors }}
+                                  </div><!-- /.form-notice -->
+                              {% endif %}
+
+                              <div class="form-body">
+                                  {% include 'form-address-update' %}
+                              </div><!-- /.form-body -->
+
+                          {% endform %}
+                      </div><!-- /.accordion-body -->
+                  </div><!-- /.accordion-section -->
+              {% endfor %}
+
+              {% include 'pagination', label: true, prev_next : true, pager: true %}
+          </div><!-- /.addresses -->
+      {% endpaginate %}
+      
+      </div>
+  </div>
+</div>
+
+<script>
+  jQuery('.address-add-link').on('click', function(e) {
+    e.preventDefault();
+    jQuery('.form-edit-address').css('display', 'none');
+    jQuery('.form-add-address').css('display', 'block');
+  });
+  
+  jQuery('.address_list').on('change', function() {
+    console.log('selected: ', jQuery(this).val());
+    var selectedForm = jQuery(this).val();
+    jQuery('.form-edit-address').css('display', 'none');
+    jQuery('.form-add-address').css('display', 'none');
+    jQuery('#address_form_' + selectedForm).css('display', 'block');
+  });
+</script>

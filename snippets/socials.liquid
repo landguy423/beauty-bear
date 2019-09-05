@@ -1,0 +1,17 @@
+{% capture social_networks %}facebook_link|fab fa-facebook-square,twitter_link|fab fa-twitter,youtube_link|fab fa-youtube,instagram_link|fab fa-instagram,email_link|fa fa-envelope{% endcapture %}
+
+{% assign split_social_networks = social_networks | split: ',' %}
+
+<ul class="list-socials">
+	{% for social in split_social_networks %}
+		{% assign social_parts = social | split: '|' %}
+
+		{% if settings[social_parts[0]] != blank %}
+			<li>
+				<a href="{{ settings[social_parts[0]] | escape }}" {% if social_parts[0] == 'email_link' %}title="Email Beauty and the Bear"{% else %} target="_blank"{% endif %}>
+					<i class="{{ social_parts[1] }}"></i>
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

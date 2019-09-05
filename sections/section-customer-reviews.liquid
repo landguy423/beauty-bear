@@ -1,0 +1,27 @@
+<div class="customer-reviews" style="margin:0 auto;max-width:{{section.settings.maxwidth}}px;">
+  {% include 'judgeme_widgets_custom', concierge_install: false %}
+</div>
+{% schema %}
+  {
+    "name": "Customer Review Carousel",
+    "settings": [
+      {
+        "type": "range",
+        "id": "maxwidth",
+        "min": 480,
+        "max": 1920,
+        "step": 40,
+        "unit": "px",
+        "label": "Maximum width",
+        "default": 1080,
+        "info": "For other settings please go to apps settings"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Customer Review Carousel",
+        "category": "Judge.me Sections"
+      }
+    ]
+  }
+{% endschema %}

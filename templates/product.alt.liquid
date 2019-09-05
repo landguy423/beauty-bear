@@ -1,0 +1,197 @@
+<script>
+	{% if product.handle == 'hair-skin-nail-gummy-vitamins' %}
+	//location.href = '/pages/hair-skin-nail-gummy-vitamins';
+	{% endif %}
+</script>
+<section class="section-product product">
+	<div class="shell">
+		<div class="section__inner">
+			<div class="product__logo product__logo--mobile">
+				<h1>{{ product.title }}</h1>
+				{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}
+			</div><!-- /.product__logo product__logo--mobile -->
+			
+            <div class="variant-images hidden-xs">
+			  <ul>
+                {% for image in product.images %}
+                {% if forloop.index < 3 %}
+                <li class="variant__image{% if forloop.index == 1 %} active{% endif %}">
+                  <a href="{{ image | img_url: '1024x' }}">
+                    <img src="{{ image | img_url: '1024x' }}"
+                       alt="{{ image.alt }}" />
+                  </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+			<div class="product__images hidden-xs">
+				<ul class="list-images">
+					{% for image in product.images %}
+						{% if forloop.index == 1 %}
+						<li>
+							<img src="{{ image | img_url: '1024x' }}" class="featured_image"
+		          alt="{{ image.alt }}" />
+						</li>
+						{% endif %}
+					{% endfor %}
+				</ul><!-- /.list-images -->
+				<div class="hidden-xs">
+				{% section 'section-features' %}
+				</div>
+			</div>
+          	<div class="product__images visible-xs-block product-image-slider">
+              {% for image in product.images %}
+              {% if forloop.index < 4 %}	
+              	<div>
+              	  <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt }}" />
+              	</div>
+              {% endif %}
+              {% endfor %}
+          	</div><!-- /.product__images -->
+
+			<div class="product__content">
+
+				<form action="/cart/add" class="form-product">
+					<div class="product__logo">
+						<h1>{{ product.title }}</h1>
+						{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}
+					</div><!-- /.product__logo -->
+
+					<div class="product-features-alt">
+						<ul>
+							<li>Grows hair longer, stronger and fuller</li>
+							<li>Increases nail growth and strength</li>
+							<li>Promotes natural collagen production and a smooth, healthy complexion</li>
+							<li>Contains Biotin, Selenium, Zinc, Panothenic Acid.</li>
+							<li>Formulated with clinically proven ingredients for effective results in 3 months</li>
+						</ul>
+					</div>
+
+					<div class="product__plan">
+						{% include 'product-plans-alt' %}
+					</div><!-- /.product__plan -->
+
+					<div class="ro_widget"></div>
+
+	        {% comment %}
+	        <div class="product__price">
+	          {% include 'product-price', variant: current_variant %}
+	        </div>
+					<div class="quanity-cart-row clearfix">
+            {% include 'snippet-quantity' %}
+					</div>
+	        {% endcomment %}
+{% assign free_exist = false %}
+                  {% for lineItem in cart.items %}
+                    {% assign itemVariant = lineItem.variant %}
+                  	{% if itemVariant.sku == 'BATB010' %}
+                  		{% assign free_exist = true %}
+                  	{% endif %}
+                  {% endfor %}
+                  	{% if free_exist == true %}<span class="already-exist">You already have a sample in your cart.</span>{% endif %}
+                  	<div class="product__actions">
+						<input type="submit" value="{{ 'products.product.buy_now' | t }}" class="btn btn--blue addtocart" {% if free_exist == true %}disabled{% endif %}>
+						<button type="button" class="ro-subscribe-btn one-month btn btn--blue" onclick="window.location='https://beauty-the-bear.myshopify.com/tools/checkout/buy_button/add_to_cart?p=1406074912812&v=13174318399532&g=83426&fn=1&ft=3&dp=<span class=money>£16.99</span>&rdp=0.85&rup=1699'">Buy Now</button>
+						<button type="button" class="ro-subscribe-btn three-months btn btn--blue" onclick="window.location='https://beauty-the-bear.myshopify.com/tools/checkout/buy_button/add_to_cart?p=1406076420140&v=13173842018348&g=83427&fn=3&ft=3&dp=<span class=money>£44.99</span>&rdp=0.8999&rup=4499'">Buy Now</button>
+						<button type="button" class="ro-subscribe-btn six-months btn btn--blue" onclick="window.location='https://beauty-the-bear.myshopify.com/tools/checkout/buy_button/add_to_cart?p=1406093885484&v=13174315876396&g=83429&fn=6&ft=3&dp=<span class=money>£79.99</span>&rdp=0.8889&rup=7999'">Buy Now</button>
+					</div><!-- /.product__actions -->
+
+					<div class="product-short-exceprt">
+						<p>Beauty & The Bear vegetarian gummy vitamins are a nourishing and tasty complex beauty supplement designed by leading dermatologists to provide the essential nutrients to support positive hair growth, healthy glowing skin, and stronger nails.</p>
+					</div>
+
+					<div class="visible-xs-block">
+					{% section 'section-features' %}
+					</div>
+
+					<input type="hidden" name="quantity" value="1">
+					<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-productid="{{product.id}}">
+
+				</form>
+
+				<div class="product__description">
+
+					{{ product.description | split: '<h6' | first }}
+
+				</div><!-- /.product__description -->
+
+			</div><!-- /.product__content -->
+		</div><!-- /.section__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.section-product -->
+
+{% assign product_accordions = product.description | split: '<h6' %}
+
+<div class="accordions product_accordion">
+	{% assign index = 1 %}
+	{% for accordion in product_accordions %}
+		{% if forloop.first %}
+			{% continue %}
+		{% endif %}
+
+		<div class="accordion">
+			<div class="accordion__head">
+				<a href="#accordion-{{ index }}">
+					<h3>{{ accordion | split: '</h6>' | first | split: '>' | last }}</h3>
+				</a>
+			</div><!-- /.accordion_head -->
+
+			<div class="accordion__body" id="accordion-{{ index }}">
+				<div class="medium-up--hide">
+					{% section 'section-nutrition-information' %}
+				</div>
+				<div class="information medium-up--hide for-table">
+					{{ accordion | split: '</h6>' | last }}
+				</div>
+				<div class="information for-description">
+					{{ accordion | split: '</h6>' | last }}
+				</div>
+				<div class="small--hide">
+					{% section 'section-nutrition-information' %}
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- /.accordion__body -->
+		</div><!-- /.accordion -->
+
+		{% assign index = index | plus: 1 %}
+	{% endfor %}
+
+	{% section 'section-product-tabs' %}
+
+	
+</div><!-- /.accordions -->
+
+{% section 'testimonial-slider' %}
+
+{% section 'product-featured-content' %}
+
+{% section 'section-customer-reviews' %}
+
+{% section 'section-instagram' %}
+
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.variant_select').on('click', function() {
+      var variantId = jQuery(this).data('variant-id');
+      console.log('is free: ', variantId);
+      if(variantId == 14084772003884 && {{ free_exist }}) {
+        jQuery("input.addtocart").prop('disabled', true);
+      } else {
+        jQuery("input.addtocart").prop('disabled', false);
+      }
+    });
+    
+    $(".product-image-slider").slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      prevArrow: null,
+      nextArrow: null
+    });
+  })
+  
+  
+</script>

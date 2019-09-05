@@ -1,0 +1,109 @@
+<section class="section-product product">
+	<div class="shell">
+		<div class="section__inner">
+			<div class="product__logo product__logo--mobile">
+				<h1>{{ product.title }}</h1>
+				{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}
+			</div><!-- /.product__logo product__logo--mobile -->
+			
+          	<div class="variant-images hidden-xs">
+			  <ul>
+                {% for image in product.images %}
+                <li class="variant__image{% if forloop.index == 1 %} active{% endif %}">
+                  <a href="{{ image | img_url: '1024x' }}">
+                    <img src="{{ image | img_url: '1024x' }}"
+                       alt="{{ image.alt }}" />
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+			<div class="product__images hidden-xs">
+				<ul class="list-images">
+					{% for image in product.images %}
+						{% if forloop.index ==1 %}
+						<li>
+							<img src="{{ image | img_url: '1024x' }}" class="featured_image"
+		          alt="{{ image.alt }}" />
+						</li>
+						{% endif %}
+					{% endfor %}
+				</ul><!-- /.list-images -->
+			</div><!-- /.product__images -->
+			
+          	<div class="product__images visible-xs-block product-image-slider">
+              {% for image in product.images %}
+              	<div>
+              	  <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt }}" />
+              	</div>
+              {% endfor %}
+          	</div><!-- /.product__images -->
+          
+			<div class="product__content">
+
+				<form action="/cart/add" class="form-product">
+					<div class="product__logo">
+						<h1>{{ product.title }}</h1>
+						{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}
+					</div><!-- /.product__logo -->
+
+					<div class="product-features">
+						<ul>
+							<li>Prevents hair damage</li>
+							<li>Stops pulling and reduces</li>
+							<li>headaches</li>
+							<li>Avoids kinks</li>
+							<li>Perfect for all hair types</li>
+						</ul>
+					</div>
+
+					<div class="product__plan bobble__plan">
+						{% include 'product-plans-bobble' %}
+					</div><!-- /.product__plan -->
+
+					<div class="ro_widget"></div>
+
+	        		<div class="product__actions">
+						<input type="submit" value="{{ 'products.product.buy_now' | t }}" class="btn btn--blue addtocart">
+						<button type="button" class="ro-subscribe-btn one-month btn btn--blue" onclick="window.location='https://beauty-the-bear.myshopify.com/tools/checkout/buy_button/add_to_cart?p=1406074912812&v=13174318399532&g=83426&fn=1&ft=3&dp=<span class=money>£16.99</span>&rdp=0.85&rup=1699'">Buy Now</button>
+						<button type="button" class="ro-subscribe-btn three-months btn btn--blue" onclick="window.location='https://beauty-the-bear.myshopify.com/tools/checkout/buy_button/add_to_cart?p=1406076420140&v=13173842018348&g=83427&fn=3&ft=3&dp=<span class=money>£44.99</span>&rdp=0.8999&rup=4499'">Buy Now</button>
+						<button type="button" class="ro-subscribe-btn six-months btn btn--blue" onclick="window.location='https://beauty-the-bear.myshopify.com/tools/checkout/buy_button/add_to_cart?p=1406093885484&v=13174315876396&g=83429&fn=6&ft=3&dp=<span class=money>£79.99</span>&rdp=0.8889&rup=7999'">Buy Now</button>
+					</div><!-- /.product__actions -->
+
+					<div class="product-short-exceprt">
+						<p>Bobblebands are the perfect way to secure your style, whether you prefer a messy bun or low ponytail. You can even use them on wet or dry hair. Made of an eco-friendly and flexible material, the bands are super lightweight and designed to prevent damage and reduce kinks.</p>
+					</div>
+
+					<input type="hidden" name="quantity" value="1">
+					<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-productid="{{product.id}}">
+
+				</form>
+
+				
+
+			</div><!-- /.product__content -->
+		</div><!-- /.section__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.section-product -->
+
+{% section 'section-customer-reviews' %}
+
+{% section 'section-interested' %}
+
+{% section 'section-instagram' %}
+
+<script>
+  jQuery(document).ready(function(){
+    $(".product-image-slider").slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      prevArrow: null,
+      nextArrow: null
+    });
+  });
+  
+  
+</script>

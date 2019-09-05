@@ -1,0 +1,52 @@
+{% assign _section = section.settings %}
+
+<section class="section-howitworks">
+  <div class="shell">
+    <div class="section__inner">
+      <img src="{{ _section.howitworks | img_url: '1024x' }}"
+           sizes="(max-width: 375px) 375vw,
+             (max-width: 767px) 767vw,
+             (max-width: 1366px) 1366vw,
+             (max-width: 1919px) 1919vw,
+             2048vw"
+           srcset="{{ _section.howitworks | img_url: '1920x' }} 1920w,
+                   {{ _section.howitworks | img_url: '1366x' }} 1366w,
+                   {{ _section.howitworks | img_url: '768x' }} 768w,
+                   {{ _section.howitworks | img_url: '375x' }} 375w"
+            />
+      <div class="video-btn">
+        <a id="video2" video-url="https://vimeo.com/326048438/8f9067dbea"><img src="{{ 'play-button.png' | asset_url }}"><span>{{ _section.btn_label }}</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "howitworks",
+      "label": "How It works Image"
+    },
+	{
+	  "type": "text",
+      "id": "btn_label",
+      "label": "Button Label"
+	}
+  ],
+  "presets": [
+    {
+      "name": "Introduction Image"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  jQuery('.video-btn').on('click', function() {
+    console.log('clicked video2');
+    jQuery('body').css('overflow', 'hidden');
+  });
+</script>

@@ -1,0 +1,68 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="section-icons">
+    <div class="shell">
+      {% if _section.content != blank %}
+        <div class="section__head">
+          <p>
+            {{ _section.content | escape | newline_to_br }}
+          </p>
+        </div><!-- /.section__head -->
+      {% endif %}
+
+      <div class="section__body">
+        <ul class="list-icons">
+          {% for block in blocks %}
+            {% assign _block = block.settings %}
+
+            {% if _block.title != blank and _block.img_name != blank %}
+              <li>
+                {{ _block.img_name | append: '.svg' | asset_url | img_tag }}
+                <span>{{ _block.title }}</span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul><!-- /.list-icons -->
+      </div><!-- /.section__body -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-icons -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Features Sonic",
+  "class": "featured-icons",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "img_name",
+          "label": "Image Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features"
+    }
+  ]
+}
+{% endschema %}

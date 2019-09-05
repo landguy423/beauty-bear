@@ -1,0 +1,57 @@
+{% assign _section = section.settings %}
+
+{% if _section.product != blank %}
+  {% assign _product = all_products[_section.product] %}
+
+  <section class="section-reviews">
+    <div class="shell">
+      {% if _section.section_title != blank %}
+        <div class="section__head">
+          <h2>
+            {{ _section.section_title | escape }}
+          </h2>
+        </div><!-- /.section__head -->
+      {% endif %}
+
+      <div class="section__body">
+        <div id="shopify-product-reviews" data-id="{{ _product.id }}">{{ _product.metafields.spr.reviews }}</div>
+      </div><!-- /.section__body -->
+
+      {% if _section.button_label != blank %}
+        <div class="section__actions">
+          <a href="{{ _product.url | within: _product.collections[0] }}" class="btn btn--pink">
+            {{ _section.button_label | escape }}
+          </a><!-- /.btn btn--pink -->
+        </div><!-- /.section__actions -->
+      {% endif %}
+    </div><!-- /.shell -->
+  </section><!-- /.section-reviews -->
+{% endif %}
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %}

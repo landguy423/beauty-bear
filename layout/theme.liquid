@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- AMPIFY-ME:START -->
+{% include 'ampify-me-snippet' %}
+<!-- AMPIFY-ME:END -->
+
+	{% include 'settings' %}
+	{% include 'head' %}
+
+	{% include 'ninjacoderz_sitemap_noindex' %}
+
+{{ content_for_header }}
+
+
+	<meta name="google-site-verification" content="YqrFRFhestcDqN8ItbnLlbf1AVWMgFvM-dijgjL9AJo" />
+	<meta name="google-site-verification" content="ei2R4vZgVARTDVFXidJySRKAhgK73ICnbI1dh54EaO4" />
+	{% include 'judgeme_core' %}
+	{% comment %}
+	{% include 'bold-common' %}
+	{% include 'bold-ro-init' %}
+	{% endcomment %}
+  
+  {{ 'modal-video.css' | asset_url | stylesheet_tag }}
+  {{ 'modal-video.js' | asset_url | script_tag }}
+  
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+  {{ 'slick.min.js' | asset_url | script_tag }}
+  
+  <!-- Hotjar Tracking Code for https://uk.beautyandthebear.com -->
+<!-- <script>
+   (function(h,o,t,j,a,r){
+       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+       h._hjSettings={hjid:1263373,hjsv:6};
+       a=o.getElementsByTagName('head')[0];
+       r=o.createElement('script');r.async=1;
+       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+       a.appendChild(r);
+   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script> -->
+
+
+</head>
+
+{% assign body_class = template | split: '/' | last | split: '.' | last  %}
+
+{% if body_class contains 'blog' %}
+	{% assign body_class = body_class | append : ' ' |  append: 'blog' %}
+{% elsif body_class contains 'article' %}
+	{% assign body_class = body_class | append : ' ' |  append: 'blog single single-post' %}
+{% elsif body_class contains 'collection' %}
+	{% assign body_class = body_class | append : ' ' |  append: 'archive' %}
+{% elsif body_class contains 'product' %}
+	{% assign body_class = body_class | append : ' ' |  append: 'single single-product' %}
+{% elsif template contains 'customers' %}
+	{% assign body_class = body_class | append : ' ' |  append: 'customer-templates' %}
+{% endif %}
+
+<body class="template-{{ body_class }}">
+<div class="wrapper">
+	{% section 'header' %}
+
+	<div class="main {% if template == 'index' or template == 'product' or template == 'product.alt' %}no-padding{% endif %}">
+		{{ content_for_layout }}
+	</div><!-- /.main -->
+
+	{% section 'footer' %}
+</div><!-- /.wrapper -->
+
+{{ scripts }}
+
+{% include 'currencies' %}
+
+  <script>
+    $(document).ready(function () {
+      $(window).on("resize", function (e) {
+        //checkScreenSize();
+      });
+
+      //checkScreenSize();
+
+      function checkScreenSize(){
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768 && $("#insta-feed").length) {
+          $('#insta-feed').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2500
+          });
+        }
+        else
+        {
+          //      $('div#insta-feed').slick('unslick');
+        }
+      }
+    });
+  </script>
+
+<!-- BEGIN INSERT CODE FOOTER -->
+
+<!-- END INSERT CODE FOOTER -->
+</body>
+</html>

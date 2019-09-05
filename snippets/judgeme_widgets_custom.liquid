@@ -1,0 +1,14 @@
+<div class='jdgm-carousel-wrapper'
+data-from-snippet='{% if concierge_install != nil %}{{ concierge_install }}{% else %}true{% endif %}'
+data-auto-install='{% if auto_install != nil %}{{ auto_install }}{% else %}false{% endif %}'  >
+  <div class="jdgm-carousel-title-and-link">
+    <span class="preview-review">{% include 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true %}</span>
+    <h2 class='jdgm-carousel-title'>CUSTOMER REVIEWS</h2>
+  </div>
+  {{ shop.metafields.judgeme.featured_carousel }}
+  <div class="carousel-footer">
+    <a href=javascript:void(0) class='jdgm-all-reviews-rating-wrapper'>
+      READ MORE REVIEWS
+    </a>
+  </div>
+</div>

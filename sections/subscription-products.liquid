@@ -1,0 +1,156 @@
+<section class="section-product product">
+	<div class="shell">
+		<div class="section__inner">
+			<div class="product__logo product__logo--mobile">
+				<h2>{{ product.title }}</h2>
+			</div><!-- /.product__logo product__logo--mobile -->
+
+      {% assign product = all_products[section.blocks[0].settings.product] %}
+			<div class="product__images">
+				<ul class="list-images">
+					{% for image in product.images %}
+						<li>
+							<img src="{{ image | img_url: '1024x' }}"
+		          alt="{{ image.alt }}"
+							sizes="(max-width: 375px) 375vw,
+		            (max-width: 767px) 767vw,
+		            (max-width: 1366px) 1366vw,
+		            (max-width: 1919px) 1919vw,
+		            2048vw"
+		          srcset="{{  image | img_url: '1920x' }} 1920w,
+		                  {{  image | img_url: '1366x' }} 1366w,
+		                  {{  image | img_url: '768x' }} 768w,
+		                  {{  image | img_url: '375x' }} 375w"
+		           />
+						</li>
+					{% endfor %}
+				</ul><!-- /.list-images -->
+			</div><!-- /.product__images -->
+
+			<div class="product__content">
+				{% if subscription_product.shipping_interval_unit_type.size > 0 %}
+					{% assign shipping_interval_unit_type = subscription_product.shipping_interval_unit_type %}
+				{% else %}
+					{% assign shipping_interval_unit_type = 'Days' %}
+				{% endif %}
+
+				{% assign subscription_product = product.metafields.subscriptions %}
+				{% assign subscription_id = subscription_product.subscription_id %}
+
+				<form action="/cart/add" class="form-product" data-productid="{{product.id}}">
+					<div class="product__logo">
+						<h2>{{ product.title }}</h2>
+					</div><!-- /.product__logo -->
+
+					<div class="product__plan">
+						{% include 'product-plans' %}
+					</div><!-- /.product__plan -->
+
+                  {% for product_option in product.options_with_values %}
+                  {% assign option_downCased = product_option.name | downcase %}
+                  {% if option_downCased == "supply" %}
+                      {% assign product_contains_subscriptions = true %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% unless product_contains_subscriptions %}
+                  <div class="product__price">
+                    {% include 'product-price', variant: current_variant %}
+                  </div>
+                  {% endunless %}
+
+					<div class="product__actions">
+						<input type="submit" value="{{ 'products.product.buy_now' | t }}" class="btn">
+					</div><!-- /.product__actions -->
+
+					<input type="hidden" name="quantity" value="1">
+					<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-productid="{{product.id}}">
+
+					<input type="hidden" id="shippingPrice" name="properties[recurring_price]" value="22.99" />
+          <input type="hidden" id="shippingFrequency" name="properties[shipping_interval_frequency]" value="1" />
+          <input type="hidden" id="shippingType" name="properties[shipping_interval_unit_type]" value="Months" />
+				</form>
+
+				<div class="product__description">
+					{% assign product_description = product.description | split: '---' %}
+
+					{{ product_description | first }}
+
+					{% if product_description.size > 1 %}
+						<div class="product__description-more">
+							{{ product_description | last | split: '<h6' | first }}
+						</div><!-- /.product__desctiption-more -->
+
+						<a href="#" class="read_more">{{ 'products.product.read_more' | t }}<a>
+					{% endif %}
+				</div><!-- /.product__description -->
+
+				{% assign product_accordions = product.description | split: '<h6' %}
+
+				<div class="accordions product_accordion">
+					{% assign index = 1 %}
+					{% for accordion in product_accordions %}
+						{% if forloop.first %}
+							{% continue %}
+						{% endif %}
+
+						<div class="accordion">
+							<div class="accordion__head">
+								<a href="#accordion-{{ index }}">
+									<h3>{{ accordion | split: '</h6>' | first | split: '>' | last }}</h3>
+								</a>
+							</div><!-- /.accordion_head -->
+
+							<div class="accordion__body" id="accordion-{{ index }}">
+								{{ accordion | split: '</h6>' | last }}
+							</div><!-- /.accordion__body -->
+						</div><!-- /.accordion -->
+
+						{% assign index = index | plus: 1 %}
+					{% endfor %}
+
+					<div class="accordion">
+						<div class="accordion__head">
+							<a href="#reviews">
+                              <h3>{{ 'products.product.reviews' | t }} <span class="tab_reviews_count">(<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>)</span></h3>
+                              <span class="hide_count reviews_tab_stars">
+                                <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                              </span>
+							</a>
+						</div><!-- /.accordion__head -->
+
+						<div class="accordion__body" id="reviews">
+							<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+						</div><!-- /.accordion__body -->
+					</div><!-- /.accordion -->
+				</div><!-- /.accordions -->
+			</div><!-- /.product__content -->
+		</div><!-- /.section__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.section-product -->
+
+{% schema %}
+{
+  "name": "Subscription Products",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription Products"
+    }
+  ]
+}
+{% endschema %}

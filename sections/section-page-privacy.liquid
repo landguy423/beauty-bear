@@ -1,0 +1,47 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="page-content section-privacy">
+    <div class="privacy-wrapper">
+      <span class="keypoints">KEY POINTS</span>
+      {% for block in blocks %}
+      <div class="privacy-item">
+        <div class="privacy-title">{{ block.settings.title }}</div>
+        <div class="privacy-content">{{ block.settings.content }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "PRIVACY",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "privacy",
+      "name": "PRIVACY",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PRIVACY"
+    }
+  ]
+}
+{% endschema %}

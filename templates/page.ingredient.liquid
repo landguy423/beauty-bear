@@ -1,0 +1,14 @@
+<div class="page-ingredients">
+  <div class="grid">
+    <div class="grid__item one-whole">
+      <div class="section-header page-title text-center">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.content }}</p>
+      </div>
+      {% section 'section-ingredients' %}
+    </div>
+  </div>
+  {% section 'section-featured-product' %}
+
+  {% section 'section-featured-products' %}
+</div>

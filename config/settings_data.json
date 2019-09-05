@@ -1,0 +1,1382 @@
+{
+  "current": {
+    "facebook_link": "https:\/\/www.facebook.com\/beautyandthebearofficial",
+    "twitter_link": "https:\/\/twitter.com\/beautyandbears",
+    "youtube_link": "https:\/\/www.youtube.com\/channel\/UC7AY5K17kFQIYZVj9ZQyIUQ",
+    "instagram_link": "https:\/\/instagram.com\/beautyandthebear",
+    "email_link": "",
+    "show_multiple_currencies": true,
+    "currency_format": "money_with_currency_format",
+    "supported_currencies": "GBP",
+    "default_currency": "GBP",
+    "color_text": "#3d4246",
+    "color_body_text": "#3d4246",
+    "color_sale_text": "#7796a8",
+    "color_borders": "#e8e9eb",
+    "color_button": "#7796a8",
+    "color_button_text": "#fff",
+    "color_small_button": "#fff",
+    "color_small_button_text": "#3d4246",
+    "color_text_field": "#fff",
+    "color_text_field_text": "#000",
+    "color_image_overlay_text": "#fff",
+    "color_image_overlay": "#3d4246",
+    "image_overlay_opacity": 25,
+    "color_body_bg": "#fff",
+    "favicon": "shopify:\/\/shop_images\/favicon-192x192.png",
+    "plus_display_discount_code": true,
+    "type_header_family": "Google_Work+Sans_600_sans",
+    "type_header_base_size": "26px",
+    "type_base_family": "Google_Work+Sans_400_sans",
+    "type_base_size": "16px",
+    "type_bold_product_titles": false,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/favicon-96x96.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Lato",
+    "checkout_body_font": "Lato",
+    "checkout_accent_color": "#1990c6",
+    "checkout_button_color": "#e85284",
+    "checkout_error_color": "#ff6d6d",
+    "bg_color": "#ffffff",
+    "custom_bg_color": false,
+    "body-custom": "",
+    "btn_main_color": "#bbbbbb",
+    "btn_main_hover": "#a2a2a2",
+    "btn_text_color": "#000",
+    "headings_color": "#000",
+    "utility_bg_color": "#000000",
+    "utility_text_color": "#ffffff",
+    "cart_options": "icon_with_qunatity",
+    "show_cart_text_at": "main_nav_section",
+    "logo": "",
+    "logo_size": "medium",
+    "logo_max_size": "200px",
+    "footer_quicklinks_linklist": "footer",
+    "product_quantity_enable": true,
+    "product_lightbox": true,
+    "products_slider": false,
+    "slider_animation": "fade",
+    "product_slider_type": "dots",
+    "thumbs_slider": false,
+    "show_related_products": true,
+    "related_title": "Other fine products",
+    "related_grid_num": "5",
+    "related_grid_row": "1",
+    "variants_listing": "radio",
+    "collections_show_sold_out_circle": false,
+    "collections_sort_enable": false,
+    "pagination_limit": "10",
+    "grid_num_collection": "4",
+    "posts_per_page": "",
+    "grid_num_blog": "4",
+    "cart_notes": false,
+    "show_in_header": true,
+    "show_in_footer": true,
+    "social_fa-facebook": "1",
+    "social_fa-twitter": "2",
+    "social_fa-instagram": "3",
+    "social_fa-pinterest": "4",
+    "social_fa-youtube": "5",
+    "social_fa-rss": "6",
+    "social_fa-tumblr": "7",
+    "social_fa-google-plus": "8",
+    "social_fa-snapchat": "9",
+    "social_fa-linkedin": "10",
+    "owl_carousel": true,
+    "magnific_popup": true,
+    "related_grid_num_collection": "4",
+    "social_facebook": "#face",
+    "social_twitter": "#tw",
+    "social_instagram": "#in",
+    "social_pinterest": "#pin",
+    "social_youtube": "#you",
+    "social_rss": "#rss",
+    "social_tumblr": "#tumb",
+    "social_google_plus": "#go",
+    "social_snap_chat": "#snap",
+    "social_linkedin": "#linkedi",
+    "social_sharing_products": false,
+    "social_sharing_blog": false,
+    "share_id": "",
+    "share_type": "none",
+    "share_fblike": false,
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_pinterest": false,
+    "share_linkedin": false,
+    "share_googleplus": false,
+    "share_email": false,
+    "share_sharethis": false,
+    "product_image_zoom_type": "lightbox",
+    "product_related_enable": true,
+    "home_section_1": "",
+    "home_section_2": "",
+    "home_section_3": "",
+    "home_section_4": "",
+    "favicon_enable": false,
+    "logo_use_image": false,
+    "checkout_use_storefront_logo": false,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "main_navigation": "main-navigation"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/footer-background.jpg",
+          "subscribe_description": "For all things cute, pink and beauty related plus promotional offers please subscribe to our email newsletter",
+          "subscribe_thank_you_message": "Thank you for subscribing!",
+          "navigation": "footer-navigation",
+          "copyright": "<p>&copy;BEAUTY &amp; THE BEAR 2018 - 140 Jupiter Lakes Boulevard, Jupiter, Florida 33458, USA<\/p>"
+        }
+      },
+      "1536694346831": {
+        "type": "section-intro",
+        "blocks": {
+          "1537100065508": {
+            "type": "slide",
+            "settings": {
+              "slide_title": "<p><strong>Release your<\/strong><\/p>\n<p>natural&nbsp;beauty<\/p>\n<p><strong>from&nbsp;within<\/strong><\/p>",
+              "slide_description": "Unleashing your natural beauty has never been so easy, so cute, or so delicious! Beauty & The Bear provides essential vitamins to encourage stronger, longer, fuller hair as well as healthier skin and nails.",
+              "slide_image": "",
+              "slide_image_mobile": "",
+              "bg_image": "shopify:\/\/shop_images\/banner_b73a1e0b-e1dd-4ef0-b8e4-28d872e08930.jpg",
+              "bg_mobile_image": "shopify:\/\/shop_images\/mobile_banner_0a7a5a3f-eda8-429e-8ec2-2ece1a19b345.jpg",
+              "button_label": "Shop Now",
+              "button_link": "shopify:\/\/products\/hair-skin-nail-vitamins",
+              "top_left": "",
+              "bottom_left": "",
+              "top_right": "",
+              "bottom_right": ""
+            }
+          }
+        },
+        "block_order": [
+          "1537100065508"
+        ],
+        "settings": {
+        }
+      },
+      "1536694352945": {
+        "type": "section-featured-products",
+        "disabled": true,
+        "blocks": {
+          "1540807080890": {
+            "type": "product",
+            "settings": {
+              "product": "hair-skin-nail-vitamins-1-month",
+              "custom_link": "https:\/\/uk.beautyandthebear.com\/products\/hair-skin-nail-vitamins",
+              "title": "",
+              "price": "",
+              "description": "60 Vegetarian Gummies",
+              "image": "",
+              "foreground_color": "#ffffff",
+              "background_color": "#fff"
+            }
+          },
+          "1540806488301": {
+            "type": "product",
+            "settings": {
+              "product": "hair-skin-nail-vitamins-3-months",
+              "custom_link": "https:\/\/uk.beautyandthebear.com\/products\/hair-skin-nail-vitamins?variant=12424546975788",
+              "title": "",
+              "price": "",
+              "description": "180 Vegetarian Gummies",
+              "image": "",
+              "foreground_color": "#000",
+              "background_color": "#fff"
+            }
+          },
+          "1540806492051": {
+            "type": "product",
+            "settings": {
+              "product": "hair-skin-nail-vitamins-6-months",
+              "custom_link": "https:\/\/uk.beautyandthebear.com\/products\/hair-skin-nail-vitamins?variant=12424547008556",
+              "title": "",
+              "price": "",
+              "description": "360 Vegetarian Gummies",
+              "image": "",
+              "foreground_color": "#000",
+              "background_color": "#fff"
+            }
+          }
+        },
+        "block_order": [
+          "1540807080890",
+          "1540806488301",
+          "1540806492051"
+        ],
+        "settings": {
+          "title": "Beauty & The Bear",
+          "title_mobile": "Beauty & The Bear Plans",
+          "sticker_image": ""
+        }
+      },
+      "1536694359004": {
+        "type": "section-featured-product",
+        "settings": {
+          "section_title": "<p><strong>Engineered by our<\/strong><\/p>\n<p><strong>team of&nbsp;expert<\/strong><\/p>\n<p><strong>dermatologists<\/strong><\/p>",
+          "content": "<p>Beauty &amp; The Bear gives you everything you need for healthier hair, skin and nails with a unique combination of Biotin, Zinc, B-complex vitamins, folic acid, and pantothenic acid.<\/p>",
+          "button_label": "Learn More",
+          "button_link": "shopify:\/\/products\/hair-skin-nail-vitamins",
+          "bg_image": "shopify:\/\/shop_images\/combined-shape_2x_e7a09ab7-afa8-4f5c-bfd4-74e60a4b8f8f.jpg",
+          "bg_mobile_image": "shopify:\/\/shop_images\/combined-shape_2x_39bf7f45-3399-47a4-bd83-970d0db8a6e0.png",
+          "desktop_image": "shopify:\/\/shop_images\/box.png",
+          "mobile_image": "shopify:\/\/shop_images\/box_1.png"
+        }
+      },
+      "1536694368153": {
+        "type": "section-features",
+        "blocks": {
+          "1537104944461": {
+            "type": "feature",
+            "settings": {
+              "title": "Vegetarian",
+              "icon": "shopify:\/\/shop_images\/Asset_1.png"
+            }
+          },
+          "1537104963462": {
+            "type": "feature",
+            "settings": {
+              "title": "Gelatine free",
+              "icon": "shopify:\/\/shop_images\/Asset_6.png"
+            }
+          },
+          "1537104976043": {
+            "type": "feature",
+            "settings": {
+              "title": "Cruelty free",
+              "icon": "shopify:\/\/shop_images\/Asset_4.png"
+            }
+          },
+          "1537104989311": {
+            "type": "feature",
+            "settings": {
+              "title": "NUT FREE",
+              "icon": "shopify:\/\/shop_images\/Asset_7.png"
+            }
+          },
+          "1537105043432": {
+            "type": "feature",
+            "settings": {
+              "title": "Dairy free",
+              "icon": "shopify:\/\/shop_images\/Asset_5.png"
+            }
+          },
+          "1542871549386": {
+            "type": "feature",
+            "settings": {
+              "title": "Gluten free",
+              "icon": "shopify:\/\/shop_images\/Asset_8.png"
+            }
+          }
+        },
+        "block_order": [
+          "1537104944461",
+          "1537104963462",
+          "1537104976043",
+          "1537104989311",
+          "1537105043432",
+          "1542871549386"
+        ],
+        "settings": {
+          "content": ""
+        }
+      },
+      "1536694376066": {
+        "type": "section-reviews",
+        "disabled": true,
+        "settings": {
+          "section_title": "What our customers say",
+          "product": "",
+          "button_label": "See all reviews"
+        }
+      },
+      "1536694383065": {
+        "type": "section-instagram",
+        "settings": {
+          "title": "#beautyandthebear",
+          "content": "<p>Tag your photos with #beautyandthebear to win prizes and feature on the Beauty &amp; The Bear Instagram feed<\/p>"
+        }
+      },
+      "section-features": {
+        "type": "section-features",
+        "blocks": {
+          "1537384319160": {
+            "type": "feature",
+            "settings": {
+              "title": "vegetarian friendly",
+              "icon": "shopify:\/\/shop_images\/Asset_1.png"
+            }
+          },
+          "1537384348218": {
+            "type": "feature",
+            "settings": {
+              "title": "Gelatine free",
+              "icon": "shopify:\/\/shop_images\/Asset_6.png"
+            }
+          },
+          "1537384360888": {
+            "type": "feature",
+            "settings": {
+              "title": "Cruelty free",
+              "icon": "shopify:\/\/shop_images\/Asset_4.png"
+            }
+          },
+          "1537384374228": {
+            "type": "feature",
+            "settings": {
+              "title": "Nut free",
+              "icon": "shopify:\/\/shop_images\/Asset_7.png"
+            }
+          },
+          "1537384385223": {
+            "type": "feature",
+            "settings": {
+              "title": "Dairy free",
+              "icon": "shopify:\/\/shop_images\/Asset_5.png"
+            }
+          },
+          "1542309379399": {
+            "type": "feature",
+            "settings": {
+              "title": "Gluten free",
+              "icon": "shopify:\/\/shop_images\/Asset_8.png"
+            }
+          }
+        },
+        "block_order": [
+          "1537384319160",
+          "1537384348218",
+          "1537384360888",
+          "1537384374228",
+          "1537384385223",
+          "1542309379399"
+        ],
+        "settings": {
+          "content": ""
+        }
+      },
+      "section-instagram": {
+        "type": "section-instagram",
+        "settings": {
+          "title": "#beautyandthebear",
+          "content": "<p>Tag your photos with #beautyandthebear and we'll feature the best photos on the Beauty & the Bear Instagram!<\/p>"
+        }
+      },
+      "section-logos": {
+        "type": "section-logos",
+        "blocks": {
+          "1537384427794": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-1.png",
+              "link": "#"
+            }
+          },
+          "1537384441280": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-2.png",
+              "link": "#"
+            }
+          },
+          "1537384450335": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-3.png",
+              "link": "#"
+            }
+          },
+          "1537384458086": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-4.png",
+              "link": "#"
+            }
+          },
+          "1537384471544": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-5.png",
+              "link": ""
+            }
+          },
+          "1537384477025": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-6.png",
+              "link": ""
+            }
+          },
+          "1537384484304": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-7.png",
+              "link": ""
+            }
+          },
+          "1537384490849": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-8.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1537384427794",
+          "1537384441280",
+          "1537384450335",
+          "1537384458086",
+          "1537384471544",
+          "1537384477025",
+          "1537384484304",
+          "1537384490849"
+        ],
+        "settings": {
+          "title": "As seen in"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_notes_enable": false
+        }
+      },
+      "subscription-products": {
+        "type": "subscription-products",
+        "blocks": {
+          "1540797922486": {
+            "type": "product",
+            "settings": {
+              "product": "hair-skin-nail-vitamins-1-month"
+            }
+          },
+          "1540797936982": {
+            "type": "product",
+            "settings": {
+              "product": "hair-skin-nail-vitamins-3-months"
+            }
+          },
+          "1540797945330": {
+            "type": "product",
+            "settings": {
+              "product": "hair-skin-nail-vitamins-6-months"
+            }
+          }
+        },
+        "block_order": [
+          "1540797922486",
+          "1540797936982",
+          "1540797945330"
+        ],
+        "settings": {
+        }
+      },
+      "section-featured-products": {
+        "type": "section-featured-products",
+        "settings": {
+          "title": "",
+          "title_mobile": "",
+          "sticker_image": ""
+        }
+      },
+      "section-ingredients": {
+        "type": "section-ingredients",
+        "blocks": {
+          "1540916852301": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Vitamin A",
+              "content": "<p>This potent vitamin is integral for healthy hair growth, glowing skin and strong nails.&nbsp; Its scientific name is <em>Palmitate<\/em> and it helps to improve the blood&rsquo;s circulation to skin and scalp. Circulation is crucial for stimulating healthy hair growth and sluggish blood circulation slows down the hair&rsquo;s growth cycle.&nbsp; A known anti-oxidant, vitamin A also fights against free radicals which attack the skin cells.&nbsp; Vitamin A also encourages sebum production which is the skin&rsquo;s natural oil and this is excellent for conditioning hair and scalp as well as for boosting the hair and skin&rsquo;s overall health.<\/p>",
+              "image": "shopify:\/\/shop_images\/vitaminA.png",
+              "weight": "2100 IU"
+            }
+          },
+          "1540916889881": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Vitamin C",
+              "content": "<p>This anti-oxidant vitamin (otherwise known as <em>Ascorbic Acid<\/em>) is essential for good quality hair, skin and nails as it encourages strength and resilience.&nbsp; Hair needs iron to grow well and Vitamin C is used by the body to absorb iron.&nbsp; Fighting against free-radicals, Vitamin C also protects skin, hair and nails from attack and builds collagen which is essential for youthful looking skin and strong hair too.&nbsp; Vitamin C also helps skin to retain its elasticity, reduce fine lines and wrinkles soit glows with good health.<\/p>",
+              "image": "shopify:\/\/shop_images\/vitaminC.png",
+              "weight": "20 mg"
+            }
+          },
+          "1540916915082": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Vitamin D",
+              "content": "<p>Healthy hair and skin needs Vitamin D as low levels are linked to alopecia (patchy hair loss).&nbsp; There is also evidence that shows Vitamin D can increase the number of new follicles in the scalp.&nbsp; However, many people are deficient in Vitamin D as it mainly comes from natural sunlight.&nbsp; Our Beauty and the Bear vitamins include Vitamin D as an essential element for healthy hair growth and great skin.<\/p>",
+              "image": "shopify:\/\/shop_images\/vitaminD.png",
+              "weight": "400 IU"
+            }
+          },
+          "1540916936944": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Vitamin E",
+              "content": "<p>Healthy hair, skin and nails need Vitamin E, which acts similarly to Vitamin C in providing the body with armour against nasty free radicals.&nbsp; An anti-oxidant vitamin, it encourages better blood circulation to the scalp and to the epidermis, boosting hair growth and supporting the hair, skin and nails with what they each need to stay healthy.&nbsp; Hair that is well-nourished with Vitamin E should be stronger and less likely to break when under stress.<\/p>",
+              "image": "shopify:\/\/shop_images\/vitaminE.png",
+              "weight": "16.5 IU"
+            }
+          },
+          "1540924401340": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Vitamin B6",
+              "content": "<p>B-vitamins are essential for healthy looking, good quality hair.&nbsp; B6 is used by the body to develop red blood cells and transport oxygen to the scalp.&nbsp; This gives the hair follicles what they need to encourage healthy hair growth.&nbsp; B6 activates a chemical reaction to ensure hair follicles receive the necessary proteins to grow, namely, keratin and melanin.&nbsp; B6 is essential for great looking hair.<\/p>",
+              "image": "shopify:\/\/shop_images\/vitaminB6.png",
+              "weight": "2mg"
+            }
+          },
+          "1540924420134": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Folic Acid",
+              "content": "<p>Folic acid (Vitamin B9) is one of the B Vitamins and deficiency of folic acid is linked to hair loss. Hair does need folic acid to maintain its overall health.&nbsp; B9 also works hard to repair the body&rsquo;s DNA, supporting cell division and keeping hair follicles healthy.&nbsp; Folic Acid will combat thinning hair and is one of our magical ingredients in the Beauty and the Bear range.<\/p>",
+              "image": "shopify:\/\/shop_images\/folic.png",
+              "weight": "260µg"
+            }
+          },
+          "1540924663716": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Vitamin B12",
+              "content": "<p>Another B Vitamin, B12 is used to help transport oxygen through red blood cells to the scalp and give the scalp what it needs to encourage healthy hair growth.&nbsp; Known for boosting energy levels too, it&rsquo;s an excellent all-round Vitamin for positive wellbeing.<\/p>",
+              "image": "shopify:\/\/shop_images\/vitaminB12.png",
+              "weight": "6 µg"
+            }
+          },
+          "1540924716737": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Biotin",
+              "content": "<p>This well-known hair Vitamin is essential for good quality hair. Responsible for helping the scalp to retain its health, Biotin produces fatty acids which are essential for promoting a healthy scalp.&nbsp; A deficiency in Biotin could result in dandruff, brittle hair and flaky skin.&nbsp; Biotin also supports the hair&rsquo;s natural protein, Keratin and hair, skin and nails need Keratin to stay strong and resilient.By synthesising the proteins in the body, Biotin is believed to improve the hair&rsquo;s thickness and strength so it grows longer without breakage; deficiency is often the reason why hair only grows to a certain length.<\/p>",
+              "image": "shopify:\/\/shop_images\/biotin.png",
+              "weight": "5000 µg"
+            }
+          },
+          "1540924749934": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Pantothenic Acid",
+              "content": "<p>This is Vitamin B5 and works hard to improve hair&rsquo;s natural growth combatting shedding and breakage.&nbsp; Hair that lacks B5 won&rsquo;t grow very fast or steadily and will likely shed and break, B5 helps to convert proteins into nourishment for your body&rsquo;s cells and uses this nourishment to arm your hair with what it needs to look good and grow properly.&nbsp; B5 keeps hair looking shiny and lustrous as it nourishes from within giving hair great natural sheen.<\/p>",
+              "image": "shopify:\/\/shop_images\/panto.png",
+              "weight": "5.2 mg"
+            }
+          },
+          "1540924775532": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Zinc",
+              "content": "<p>An essential vitamin for healthy hair, skin and nails, it plays a vital role in hair tissue growth and repair.&nbsp; Zinc&rsquo;s responsibilities include keeping the oil glands working properly so that follicles produce healthy hair.&nbsp; A Zinc deficiency is often the reason behind hair loss, hair breakage and thinning because the lack of Zinc weakens the hair follicles.&nbsp; Taking Zinc will improve moisture levels in your scalp so hair follicles have the right environment to produce healthy looking hair.&nbsp; A dry, itchy and flaky scalp only adds to hair problems.<\/p>",
+              "image": "shopify:\/\/shop_images\/zinc.png",
+              "weight": "2.7 mg"
+            }
+          },
+          "1540924798569": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Iodine",
+              "content": "<p>Iodine is converted into hormones by the thyroid and is essential for healthy skin and hair but deficiency in iodine or an underactive thyroid means that skin and hair weakens.&nbsp; Often one of the reasons behind hair loss, iodine can boost healthy hair growth and keep skin looking fresh and youthful.<\/p>",
+              "image": "shopify:\/\/shop_images\/iodine.png",
+              "weight": "42 µg"
+            }
+          },
+          "1540924821969": {
+            "type": "ingredient",
+            "settings": {
+              "title": "Choline",
+              "content": "<p>One of the B Vitamins, Choline is essential in providing hair follicles with the nutrients they need to promote better, healthier hair growth.&nbsp; It is the hair follicles&rsquo; natural hair strengthener and helps hair to retain its moisture which in turn, keeps its condition soft and manageable.&nbsp; Without Choline, hair grows through brittle which is why it is prone to breakage.&nbsp; Hair needs Choline to grow long and strong.<\/p>",
+              "image": "shopify:\/\/shop_images\/choline.png",
+              "weight": "40 µg"
+            }
+          }
+        },
+        "block_order": [
+          "1540916852301",
+          "1540916889881",
+          "1540916915082",
+          "1540916936944",
+          "1540924401340",
+          "1540924420134",
+          "1540924663716",
+          "1540924716737",
+          "1540924749934",
+          "1540924775532",
+          "1540924798569",
+          "1540924821969"
+        ],
+        "settings": {
+        }
+      },
+      "section-featured-product": {
+        "type": "section-featured-product",
+        "settings": {
+          "section_title": "<p>What <em>you<\/em><\/p>\n<p><strong>will<\/strong> notice...<\/p>",
+          "content": "<p><\/p>\n<p><\/p>\n<p><strong>Two weeks...<br><\/strong>An increase in moisture levels will already promote lustrous hair and a glow to your skin.&nbsp; Hair and skin both feel better hydrated.<\/p>\n<p><strong>One month...<br><\/strong>Hair starts to grow faster and feels far more manageable, overall condition starts to improve.&nbsp; Skin is smoother and plumper looking and nails growing faster with less breakage.<\/p>\n<p><strong>Two Months...<\/strong><br>A significant reduction in hair shedding and better thickness, hair continues to grow faster than ever before.&nbsp; Skin is smooth and should be blemish-free, plumpness and radiance restored.&nbsp; Nails are long, strong and naturally shiny.<\/p>\n<p><strong>Three Months...<br><\/strong>Hair looks significantly better than ever before, it is still growing well, looks naturally shiny, is more manageable and with far less breakage.&nbsp; Overall condition is excellent.&nbsp; Skin still glows and looks more youthful with good natural colour, oil levels are balanced.&nbsp; Nails are longer, stronger and healthier.<\/p>\n<p><\/p>",
+          "button_label": "Buy Now",
+          "button_link": "#",
+          "bg_image": "shopify:\/\/shop_images\/ingredient-bg_025cace6-f523-4140-af55-900bc6e8cf62.jpg",
+          "bg_mobile_image": "shopify:\/\/shop_images\/background_c2272430-22a1-4bdc-b963-d69cafee95f5.jpg",
+          "desktop_image": "shopify:\/\/shop_images\/featured-product_2048x-ed.png",
+          "mobile_image": "shopify:\/\/shop_images\/Box_1018ed2.png"
+        }
+      },
+      "section-product-tabs": {
+        "type": "section-product-tabs",
+        "blocks": {
+          "1542359082792": {
+            "type": "feature",
+            "settings": {
+              "content": "Eat 2 gummy bears every day"
+            }
+          },
+          "1542359101812": {
+            "type": "feature",
+            "settings": {
+              "content": "Your body naturally absorbs the vitamins and minerals provided which stimulate healthy hair, skin and nail growth"
+            }
+          },
+          "1542359135315": {
+            "type": "feature",
+            "settings": {
+              "content": "A visible difference in the texture, length and strength of your hair should be visible within 12 weeks alongside stronger nails and a smooth, glowing complexion."
+            }
+          },
+          "1542359183885": {
+            "type": "faq",
+            "settings": {
+              "question": "What are the benefits of taking Beauty & The Bear beauty gummies?",
+              "answer": "<p>The winning combination of ingredients in each gummy enhances the body’s ability to:<\/p>\n<p>• Grow stronger, thicker, longer and shiner hair at speed<br> • Improve hair elasticity and reduce breakage<br> • Grow healthier, stronger and longer nails<br> • Produce collagen for firmer, glowing, clearer and youthful looking skin<\/p>"
+            }
+          },
+          "1542359237939": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I take Beauty & The Bear gummies",
+              "answer": "<p>• Take just two bear gummies a day for best results<\/p>\n<p>• Exceeding this dosage will not make your hair or nails grow faster!<\/p>\n<p>• Each bottle contains a months supply<\/p>\n<p>• Chew each bear before swallowing and enjoy the wild berry flavour<\/p>\n<p>• You can eat the bears anytime of day, with or without food. We recommend however you take them alongside your breakfast to help build a lasting routine<\/p>"
+            }
+          },
+          "1542359259677": {
+            "type": "faq",
+            "settings": {
+              "question": "How long should I take the gummies for?",
+              "answer": "<p>Beauty &amp; The Bear gummies are designed for real, positive beauty results. Incorporating vitamin and minerals into your diet should be a lifestyle choice, not a temporary fad.<\/p>\n<p><\/p>\n<p>We recommend a minimum of 3 months.<\/p>"
+            }
+          },
+          "1543848720535": {
+            "type": "faq",
+            "settings": {
+              "question": "How fast will my hair grow using Beauty & The Bear gummies?",
+              "answer": "<p>With daily usage, you should expect approximately 1 inch per month, although results vary by individual.<\/p>\n<p>Don't forget to share you hair growth journey pics with us on Instagram @BEAUTYANDTHEBEAR<\/p>"
+            }
+          },
+          "1543848887363": {
+            "type": "faq",
+            "settings": {
+              "question": "Are the gummies suitable for vegetarians?",
+              "answer": "<p>Absolutely. We use only vegetarian ingredients.<\/p>"
+            }
+          },
+          "1543848900238": {
+            "type": "faq",
+            "settings": {
+              "question": "Are the gummies gluten free?",
+              "answer": "<p>Yes, they are.<\/p>"
+            }
+          },
+          "1543848913505": {
+            "type": "faq",
+            "settings": {
+              "question": "Are Beauty & The Bear gummies Halal?",
+              "answer": "<p>All of the ingredients in our gummies are Halal and have been manufactured in a factory which is Halal compliant.<\/p>"
+            }
+          },
+          "1543848935627": {
+            "type": "faq",
+            "settings": {
+              "question": "Will the gummies cause me to grow hair all over my body?",
+              "answer": "<p>No. Beauty &amp; The Bear gummies work to enhance scalp hair growth, not body hair growth.<\/p>"
+            }
+          },
+          "1543848948717": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I take Beauty & The Bear gummies if I have any diagnosed medical conditions?",
+              "answer": "<p>You should always consult with a medical professional before starting any supplement regime, especially if taking any prescribed medication.<\/p>"
+            }
+          },
+          "1543849033759": {
+            "type": "faq",
+            "settings": {
+              "question": "I can’t consume Biotin, can I still take the gummies?",
+              "answer": "<p>If you are sensitive to Biotin, we recommend contacting your doctor first before taking Beauty &amp; The Bear gummies. (Gummies contain 5000mcg Biotin).<\/p>"
+            }
+          },
+          "1543849042962": {
+            "type": "faq",
+            "settings": {
+              "question": "Who can use Beauty & The Bear gummies?",
+              "answer": "<p>Gummies are suitable for those aged 12+<br>They are suitable for men and women.<\/p>\n<p>If you are pregnant, breastfeeding or taking other medication, it is best to seek medical practitioner advice before you consume our vitamins.<\/p>"
+            }
+          },
+          "1543849068493": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I take Beauty & The Bear gummies if I’m pregnant or breastfeeding?",
+              "answer": "<p>As with all supplements, it is best to seek medical advice before taking if you are pregnant or breastfeeding.<\/p>"
+            }
+          },
+          "1543849082740": {
+            "type": "faq",
+            "settings": {
+              "question": "Are there any side effects?",
+              "answer": "<p>Beauty and the bear gummies are a quality supplement and should not cause any negative side effects. It is best to review the ingredients for any sensitivities or allergies you may have before use.  Those with a mild sensitivity to biotin may suffer mild breakouts in the first couple of weeks. If these breakouts persist beyond this time we recommend you stop taking the gummies and report your reaction to a medical professional.<\/p>"
+            }
+          },
+          "1543849095030": {
+            "type": "faq",
+            "settings": {
+              "question": "What happens if I stop taking Beauty & The Bear gummies?",
+              "answer": "<p>There are no side effects if you stop taking the gummies, you simply won't continue to reap the benefits of taking them.<\/p>"
+            }
+          },
+          "1543849110202": {
+            "type": "faq",
+            "settings": {
+              "question": "Is it ok to take Beauty & The Bear gummies alongside other vitamins?",
+              "answer": "<p>As with all supplements, it is best to seek medical advice especially if you already take other vitamins.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1542359082792",
+          "1542359101812",
+          "1542359135315",
+          "1542359183885",
+          "1542359237939",
+          "1542359259677",
+          "1543848720535",
+          "1543848887363",
+          "1543848900238",
+          "1543848913505",
+          "1543848935627",
+          "1543848948717",
+          "1543849033759",
+          "1543849042962",
+          "1543849068493",
+          "1543849082740",
+          "1543849095030",
+          "1543849110202"
+        ],
+        "settings": {
+          "tab1_title": "HOW IT WORKS",
+          "tab2_title": "FAQs"
+        }
+      },
+      "product-featured-content": {
+        "type": "product-featured-content",
+        "blocks": {
+          "1542437369715": {
+            "type": "feature",
+            "settings": {
+              "title": "1 MONTH",
+              "image": "shopify:\/\/shop_images\/compare1.jpg"
+            }
+          },
+          "1542437386205": {
+            "type": "feature",
+            "settings": {
+              "title": "3 MONTHS",
+              "image": "shopify:\/\/shop_images\/compare2.jpg"
+            }
+          },
+          "1542437405589": {
+            "type": "feature",
+            "settings": {
+              "title": "6 MONTHS",
+              "image": "shopify:\/\/shop_images\/compare3.jpg"
+            }
+          },
+          "1542437419257": {
+            "type": "feature",
+            "settings": {
+              "title": "12 MONTHS",
+              "image": "shopify:\/\/shop_images\/compare4.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1542437369715",
+          "1542437386205",
+          "1542437405589",
+          "1542437419257"
+        ],
+        "settings": {
+          "title": "Before \/ After"
+        }
+      },
+      "testimonial-slider": {
+        "type": "testimonial-slider",
+        "blocks": {
+          "1542443839680": {
+            "type": "testimonial",
+            "settings": {
+              "name": "@charlottedawsy",
+              "content": "\"My hair is growing faster & looking much more glossy, rich, & thicker since I started using these little bears. I'm in love 😍”",
+              "image": "shopify:\/\/shop_images\/rectangle_2x_b52f9452-b1a1-4cb0-809b-3b9a0b0fae2c.jpg",
+              "link": ""
+            }
+          },
+          "1542443853490": {
+            "type": "testimonial",
+            "settings": {
+              "name": "@lateysha_grace",
+              "content": "\"These are so cute and taste amazing! 😋 Beauty truly does start from within and I'm addicted”",
+              "image": "shopify:\/\/shop_images\/rectangle_2x_09efb286-d832-4263-838d-de57cdbe4c4d.jpg",
+              "link": ""
+            }
+          },
+          "1542443873468": {
+            "type": "testimonial",
+            "settings": {
+              "name": "@Shelbytribble",
+              "content": "\"These have quickly gone into my top fav beauty products list. Taste unreal & my complexion is looking brighter by the day 💖”",
+              "image": "shopify:\/\/shop_images\/rectangle_2x_8c67ed71-20e5-4cf9-beec-f2da71e05a03.jpg",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1542443839680",
+          "1542443853490",
+          "1542443873468"
+        ],
+        "settings": {
+          "title": "Real customers, Real results"
+        }
+      },
+      "judgeme_carousel_section": {
+        "type": "judgeme_carousel_section",
+        "settings": {
+          "maxwidth": 1080
+        }
+      },
+      "1542875435251": {
+        "type": "testimonial-slider",
+        "blocks": {
+          "1542875465774": {
+            "type": "testimonial",
+            "settings": {
+              "name": "@charlottedawsy",
+              "content": "\"My hair is growing faster & looking much more glossy, rich, & thicker since I started using these little bears. I'm in love 😍”",
+              "image": "shopify:\/\/shop_images\/rectangle_2x_b52f9452-b1a1-4cb0-809b-3b9a0b0fae2c.jpg",
+              "link": "https:\/\/www.instagram.com\/charlottedawsy\/"
+            }
+          },
+          "1542875494202": {
+            "type": "testimonial",
+            "settings": {
+              "name": "@lateysha_grace",
+              "content": "\"These are so cute and taste amazing! 😋 Beauty truly does start from within and I'm addicted”",
+              "image": "shopify:\/\/shop_images\/rectangle_2x_09efb286-d832-4263-838d-de57cdbe4c4d.jpg",
+              "link": "https:\/\/www.instagram.com\/lateysha_grace\/"
+            }
+          },
+          "1542875526445": {
+            "type": "testimonial",
+            "settings": {
+              "name": "@Shelbytribble",
+              "content": "\"These have quickly gone into my top fav beauty products list. Taste unreal & my complexion is looking brighter by the day 💖”",
+              "image": "shopify:\/\/shop_images\/rectangle_2x_8c67ed71-20e5-4cf9-beec-f2da71e05a03.jpg",
+              "link": "https:\/\/www.instagram.com\/shelbytribble\/"
+            }
+          }
+        },
+        "block_order": [
+          "1542875465774",
+          "1542875494202",
+          "1542875526445"
+        ],
+        "settings": {
+          "title": "REAL CUSTOMERS, REAL RESULTS"
+        }
+      },
+      "1542875727895": {
+        "type": "product-featured-content",
+        "blocks": {
+          "1542875739271": {
+            "type": "feature",
+            "settings": {
+              "title": "1 month",
+              "image": "shopify:\/\/shop_images\/5.2.jpg"
+            }
+          },
+          "1542875755507": {
+            "type": "feature",
+            "settings": {
+              "title": "3 months",
+              "image": "shopify:\/\/shop_images\/compare3.jpg"
+            }
+          },
+          "1542875780675": {
+            "type": "feature",
+            "settings": {
+              "title": "6 months",
+              "image": "shopify:\/\/shop_images\/10.jpg"
+            }
+          },
+          "1542875795750": {
+            "type": "feature",
+            "settings": {
+              "title": "12 months",
+              "image": "shopify:\/\/shop_images\/compare2.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1542875739271",
+          "1542875755507",
+          "1542875780675",
+          "1542875795750"
+        ],
+        "settings": {
+          "title": "before \/ after"
+        }
+      },
+      "1542875963319": {
+        "type": "judgeme_carousel_section",
+        "settings": {
+          "maxwidth": 1080
+        }
+      },
+      "section-faqs": {
+        "type": "section-faqs",
+        "blocks": {
+          "1543267408499": {
+            "type": "faq",
+            "settings": {
+              "question": "What are the benefits of taking Beauty & The Bear beauty gummies?",
+              "answer": "<p>The winning combination of ingredients in each gummy enhances the body&rsquo;s ability to:<\/p>\n<p>&nbsp; &bull; Grow stronger, thicker, longer and shiner hair at speed<br>&nbsp; &bull; Improve hair elasticity and reduce breakage<br>&nbsp; &bull; Grow healthier, stronger and longer nails<br>&nbsp; &bull; Produce collagen for firmer, glowing, clearer and youthful looking skin<\/p>"
+            }
+          },
+          "1543268571212": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I take Beauty & The Bear gummies",
+              "answer": "<p>&nbsp; &bull;&nbsp;Take just two bear gummies a day for best results<\/p>\n<p>&nbsp; &bull;&nbsp;Exceeding this dosage will not make your hair or nails grow faster!<\/p>\n<p>&nbsp; &bull;&nbsp;Each bottle contains a months supply<\/p>\n<p>&nbsp; &bull;&nbsp;Chew each bear before swallowing and enjoy the wild berry flavour<\/p>\n<p>&nbsp; &bull;&nbsp;You can eat the bears anytime of day, with or without food. We recommend however you take them alongside your breakfast to help build a lasting routine<\/p>"
+            }
+          },
+          "1543268677559": {
+            "type": "faq",
+            "settings": {
+              "question": "How long should I take the gummies for?",
+              "answer": "<p>Beauty &amp; The Bear gummies are designed for real, positive beauty results. Incorporating vitamin and minerals into your diet should be a lifestyle choice, not a temporary fad.<\/p>\n<p>&nbsp;<\/p>\n<p>We recommend a minimum of 3 months.<\/p>"
+            }
+          },
+          "1543268701516": {
+            "type": "faq",
+            "settings": {
+              "question": "How fast will my hair grow using Beauty & The Bear gummies?",
+              "answer": "<p>With daily usage, you should expect approximately 1 inch per month, although results vary by individual.<\/p>\n<p>Don't forget to share you hair growth journey pics with us on Instagram @BEAUTYANDTHEBEAR<\/p>"
+            }
+          },
+          "1543268726486": {
+            "type": "faq",
+            "settings": {
+              "question": "Are the gummies suitable for vegetarians?",
+              "answer": "<p>Absolutely. We use only vegetarian ingredients.<\/p>"
+            }
+          },
+          "1543268732595": {
+            "type": "faq",
+            "settings": {
+              "question": "Are the gummies gluten free?",
+              "answer": "<p>Yes, they are.<\/p>"
+            }
+          },
+          "1543268742806": {
+            "type": "faq",
+            "settings": {
+              "question": "Are Beauty & The Bear gummies Halal?",
+              "answer": "<p>All of the ingredients in our gummies are Halal and have been manufactured in a factory which is Halal compliant.<\/p>"
+            }
+          },
+          "1543268754076": {
+            "type": "faq",
+            "settings": {
+              "question": "Will the gummies cause me to grow hair all over my body?",
+              "answer": "<p>No. Beauty &amp; The Bear gummies work to enhance scalp hair growth, not body hair growth.<\/p>"
+            }
+          },
+          "1543268765034": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I take Beauty & The Bear gummies if I have any diagnosed medical conditions?",
+              "answer": "<p>You should always consult with a medical professional before starting any supplement regime, especially if taking any prescribed medication.<\/p>"
+            }
+          },
+          "1543268825063": {
+            "type": "faq",
+            "settings": {
+              "question": "I can’t consume Biotin, can I still take the gummies?",
+              "answer": "<p>If you are sensitive to Biotin, we recommend contacting your doctor first before taking Beauty &amp; The Bear gummies. (Gummies contain 5000mcg Biotin).<\/p>"
+            }
+          },
+          "1543268862673": {
+            "type": "faq",
+            "settings": {
+              "question": "Who can use Beauty & The Bear gummies?",
+              "answer": "<p>Gummies are suitable for those aged 12+<\/p>\n<p>They are suitable for men and women.<\/p>\n<p>If you are pregnant, breastfeeding or taking other medication, it is best to seek medical practitioner advice before you consume our vitamins.<\/p>"
+            }
+          },
+          "1543268875055": {
+            "type": "faq",
+            "settings": {
+              "question": "Can I take Beauty & The Bear gummies if I’m pregnant or breastfeeding?",
+              "answer": "<p>As with all supplements, it is best to seek medical advice before taking if you are pregnant or breastfeeding.<\/p>"
+            }
+          },
+          "1543268885603": {
+            "type": "faq",
+            "settings": {
+              "question": "Are there any side effects?",
+              "answer": "<p>Beauty and the bear gummies are a quality supplement and should not cause any negative side effects. It is best to review the ingredients for any sensitivities or allergies you may have before use. Those with a mild sensitivity to biotin may suffer mild breakouts in the first couple of weeks. If these breakouts persist beyond this time we recommend you stop taking the gummies and report your reaction to a medical professional.<\/p>"
+            }
+          },
+          "1543268897939": {
+            "type": "faq",
+            "settings": {
+              "question": "What happens if I stop taking Beauty & The Bear gummies?",
+              "answer": "<p>There are no side effects if you stop taking the gummies, you simply won't continue to reap the benefits of taking them.<\/p>"
+            }
+          },
+          "1543268920766": {
+            "type": "faq",
+            "settings": {
+              "question": "Is it ok to take Beauty & The Bear gummies alongside other vitamins?",
+              "answer": "<p>As with all supplements, it is best to seek medical advice especially if you already take other vitamins.<\/p>"
+            }
+          },
+          "1543268954667": {
+            "type": "faq",
+            "settings": {
+              "question": "Where do you ship to?",
+              "answer": "<p>We ship worldwide.<\/p>"
+            }
+          },
+          "1543268965174": {
+            "type": "faq",
+            "settings": {
+              "question": "How long does shipping take?",
+              "answer": "<p>2-3 working days to the UK, up to 10 working days worldwide.<\/p>"
+            }
+          },
+          "1543268977615": {
+            "type": "faq",
+            "settings": {
+              "question": "What options do you offer for international shipping?",
+              "answer": "<p>Depending on your location, we use secure carriers including, DHL, UPS and FEDEX. <br>Exact shipping and delivery charges are determined by your location and the package weight.<\/p>"
+            }
+          },
+          "1543268988225": {
+            "type": "faq",
+            "settings": {
+              "question": "Will I be charged duty fees?",
+              "answer": "<p>Our company is based in the UK. All our UK orders are free from duty fees.&nbsp; While most of our orders are free from any import taxes or duty fees, we cannot be held responsible for any taxes, seizures or fees imposed by importing our product outside the UK. By complying with all local standards and regulations, we do our very best to avoid any possible charges your country may add to your shipment. The final decision is decided by your country's import regulations. You may contact your local customs&rsquo; agent if you have any questions regarding additional fees on your shipment.<\/p>"
+            }
+          },
+          "1543269001455": {
+            "type": "faq",
+            "settings": {
+              "question": "How do I track a package?",
+              "answer": "<p>We will send you a tracking number via email once we have shipped your order.<\/p>"
+            }
+          },
+          "1543269011598": {
+            "type": "faq",
+            "settings": {
+              "question": "I didn't receive a shipping or order confirmation.",
+              "answer": "<p>Please email us at hello@beautyandthebear.com to confirm your order was placed if you did not receive a confirmation email from us.<\/p>\n<p>&nbsp;<\/p>\n<p>Do check your spam box, just incase it got filed here.<\/p>"
+            }
+          },
+          "1543269030793": {
+            "type": "faq",
+            "settings": {
+              "question": "What forms of payment do you accept?",
+              "answer": "<p>We accept PayPal and credit or debit card payments.<\/p>\n<p><strong>&nbsp;<\/strong><\/p>\n<p>When you reach the payment screen, you will see two payment options:&nbsp; 'Checkout with PayPal' or 'Place your order'. Please chose the later option to pay by credit or debit card.<\/p>"
+            }
+          },
+          "1543269051126": {
+            "type": "faq",
+            "settings": {
+              "question": "Are my credit card details safe?",
+              "answer": "<p>Yes, Beauty &amp; The Bear is a secure website with an encryption service to process your payment, credit or debit <br>card information.<\/p>"
+            }
+          },
+          "1543269060794": {
+            "type": "faq",
+            "settings": {
+              "question": "Do you accept returns?",
+              "answer": "<p>We are happy to process returns for <u>unopened<\/u>, sealed products.<\/p>\n<p>&nbsp;<\/p>\n<p>Please send us an email requesting a return stating your order number, name and contact details along with your return for refund reasoning.<\/p>\n<p>&nbsp;<\/p>\n<p>When returning the product, make a note of your shipment receipt as we cannot be responsible for items that go missing in the post. We respectfully ask that you cover your return shipment costs.<\/p>\n<p>&nbsp;<\/p>\n<p>All returns should be sent to the below address, however please note that only unopened, sealed bottles will be refunded:<\/p>\n<p>Beauty Bear Ltd<\/p>\n<p>Core Fulfilment<\/p>\n<p>1-3, Orion Park,<\/p>\n<p>Orion Way, Crewe<\/p>\n<p>CW1 6NG<\/p>\n<p>United Kingdom<\/p>"
+            }
+          },
+          "1543269151280": {
+            "type": "faq",
+            "settings": {
+              "question": "How can I get a refund?",
+              "answer": "<p>We will only accept refunds on products that are <u>returned unopened and undamaged<\/u>.<\/p>\n<p>&nbsp;<\/p>\n<p>We will only refund your order via your original payment method.<\/p>\n<p>&nbsp;<\/p>\n<p>Simply click <a href=\"https:\/\/www.hairburst.com\/a\/returns\">here<\/a> and fill in your order number and email address. You will then be asked the reasons why you want to return the order and you will be sent an email with our delivery address on.<\/p>\n<p>If you have any issues, please contact support@beautyandthebear.com and we will get back to you asap.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1543267408499",
+          "1543268571212",
+          "1543268677559",
+          "1543268701516",
+          "1543268726486",
+          "1543268732595",
+          "1543268742806",
+          "1543268754076",
+          "1543268765034",
+          "1543268825063",
+          "1543268862673",
+          "1543268875055",
+          "1543268885603",
+          "1543268897939",
+          "1543268920766",
+          "1543268954667",
+          "1543268965174",
+          "1543268977615",
+          "1543268988225",
+          "1543269001455",
+          "1543269011598",
+          "1543269030793",
+          "1543269051126",
+          "1543269060794",
+          "1543269151280"
+        ],
+        "settings": {
+        }
+      },
+      "custom-reviews": {
+        "type": "custom-reviews",
+        "blocks": {
+          "1543266145476": {
+            "type": "review",
+            "settings": {
+              "name": "Test",
+              "date": "10\/20\/2018",
+              "avatar": "shopify:\/\/shop_images\/iodine.png",
+              "more_link": "",
+              "comment": ""
+            }
+          },
+          "1543266194389": {
+            "type": "review",
+            "settings": {
+              "name": "Test",
+              "date": "10\/10\/2018",
+              "avatar": "shopify:\/\/shop_images\/biotin.png",
+              "more_link": "",
+              "comment": "asdfdafds"
+            }
+          }
+        },
+        "block_order": [
+          "1543266145476",
+          "1543266194389"
+        ],
+        "settings": {
+          "section_title": "",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "section-nutrition-information": {
+        "type": "section-nutrition-information",
+        "settings": {
+          "text": "",
+          "image": "shopify:\/\/shop_images\/group-7_2x_7abf845e-02f8-4d45-aa1f-356bea95d46a.png"
+        }
+      },
+      "section-page-terms": {
+        "type": "section-page-terms",
+        "blocks": {
+          "1553024070742": {
+            "type": "term",
+            "settings": {
+              "title": "1. These Terms and Conditions",
+              "content": "<p>1.1 These terms and conditions (together with the documents referred to in it) (collectively, these &ldquo;terms&rdquo;) set out the basis on which you may make use of the website beautyandthebear.com (our &ldquo; site&rdquo;), whether as a guest or a registered user. Please read these terms of use carefully before you start to use our site.<\/p>\n<p>1.2 By using our site, you indicate that you accept these terms and that you agree to abide by them. If you do not agree to these terms, you must not use our site.<\/p>\n<p>1.3 We recommend that you should print a copy of these terms and conditions for future reference.<\/p>"
+            }
+          },
+          "1553024129398": {
+            "type": "term",
+            "settings": {
+              "title": "2. Information about us",
+              "content": "<p>2.1 Our office address is: 140 Jupiter Lakes Boulevard, Jupiter, Florida 33458, USA.<\/p>\n<p>2.2 You can contact us using the following email address: info@beautyandthebear.com.<\/p>"
+            }
+          },
+          "1553024152306": {
+            "type": "term",
+            "settings": {
+              "title": "3. There are other terms that may apply to you",
+              "content": "<p>3.1 Our Privacy Policy which also applies to your use of our site, sets out the terms on which we process any personal data we collect from you, or that you provide to us. By using our site, you consent to such processing and you warrant that all data provided by you is accurate.<\/p>\n<p>3.2 If you purchase goods from our site, our terms and conditions of supply will apply to the sale of such goods.<\/p>"
+            }
+          },
+          "1553024172717": {
+            "type": "term",
+            "settings": {
+              "title": "4. We may make changes to these terms",
+              "content": "<p>We amend these terms from time to time. Every time you wish to use our site, please check these terms to ensure you understand the terms that apply at that time.<\/p>"
+            }
+          },
+          "1553024183334": {
+            "type": "term",
+            "settings": {
+              "title": "5. We may make changes to our site",
+              "content": "<p>We may update and change our site from time to time to reflect changes to our products, our users' needs and our business priorities or for any other reason.<\/p>"
+            }
+          },
+          "1553024193539": {
+            "type": "term",
+            "settings": {
+              "title": "6. We may suspend or withdraw our site",
+              "content": "<p>6.1 We do not guarantee that our site, or any content on it, will always be available or be uninterrupted. We may suspend or withdraw or restrict the availability of all or any part of our site for business and operational reasons. We will try to give you reasonable notice of any suspension or withdrawal.<\/p>\n<p>6.2 You are also responsible for ensuring that all persons who access our site through your internet connection are aware of these terms of use and other applicable terms and conditions, and that they comply with them.<\/p>"
+            }
+          },
+          "1553024213385": {
+            "type": "term",
+            "settings": {
+              "title": "7. Accessing our site",
+              "content": "<p>7.1 Our site and any services provided via the site will be in English and it will be your responsibility to ensure that you fully understand the information and advice on our site. We do not represent that content available on or through our site is appropriate for use or available in other locations.<\/p>\n<p>7.2 From time to time, we may restrict access to some parts of our site, or our entire site, to users who have registered with us.<\/p>\n<p>7.3 If you choose, or you are provided with, a user identification code, password or any other piece of information as part of our security procedures, you must treat such information as confidential, and you must not disclose it to any third party. We have the right to disable any user identification code or password, whether chosen by you or allocated by us, at any time, if in our opinion you have failed to comply with any of the provisions of these terms of use.<\/p>\n<p>7.4 We will determine, in our discretion, whether there has been a breach of these terms through your use of our site. When a breach of these terms has occurred, we may take such action as we deem appropriate and may result in our taking all or any of the following actions:<\/p>\n<p>7.4.1 immediate, temporary or permanent withdrawal of your right to use our site;<\/p>\n<p>7.4.2 issue of a warning to you;<\/p>\n<p>7.4.3 legal proceedings against you resulting from the breach;<\/p>\n<p>7.4.4 disclosure of such information to law enforcement authorities as we reasonably feel is necessary.<\/p>\n<p>7.5 You must not use our site or services for emergencies. In emergencies, you should consult your local doctor or the emergency department of your nearest hospital.<\/p>"
+            }
+          },
+          "1553024271749": {
+            "type": "term",
+            "settings": {
+              "title": "8. Intellectual property rights and how you may use material on our site",
+              "content": "<p>8.1 We are the owner or the licensee of all intellectual property rights in our site, and in the material published on it. Those works are protected by copyright laws and treaties around the world. All such rights are reserved.<\/p>\n<p>8.2 You may print off one copy, and may download extracts, of any page(s) from our site for your personal reference and you may draw the attention of others within your organisation to material posted on our site.<\/p>\n<p>8.3 You must not modify the paper or digital copies of any materials you have printed off or downloaded in any way, and you must not use any illustrations, photographs, video or audio sequences or any graphics separately from any accompanying text.<\/p>\n<p>8.4 Our status (and that of any identified contributors) as the authors of material on our site must always be acknowledged.<\/p>\n<p>8.5 You must not use any part of the materials on our site for commercial purposes without obtaining a licence to do so from us or our licensors.<\/p>\n<p>8.6 If you print off, copy or download any part of our site in breach of these terms of use, your right to use our site will cease immediately and you must, at our option, return or destroy any copies of the materials you have made.<\/p>"
+            }
+          },
+          "1553024312324": {
+            "type": "term",
+            "settings": {
+              "title": "9. Our liability",
+              "content": "<p>9.1 The material displayed on our site (which includes the blog on the site) is provided without any guarantees, conditions or warranties as to its accuracy.<\/p>\n<p>9.2 We do not exclude or limit in any way our liability to you where it would be unlawful to do so. This includes liability for death or personal injury caused by our negligence or the negligence of our employees, agents or subcontractors and for fraud or fraudulent misrepresentation.<\/p>\n<p>9.3 Different limitations and exclusions of liability will apply to liability arising as a result of the supply of any products to you, which will be set out in our Terms and Conditions of Sale . If you are a business user of our site:<\/p>\n<p>9.4 We exclude all implied conditions, warranties, representations or other terms that may apply to our site or any content on it.<\/p>\n<p>9.5 We will not be liable to you for any loss or damage, whether in contract, tort (including negligence), breach of statutory duty, or otherwise, even if foreseeable, arising under or in connection with:<\/p>\n<p>9.5.1 use of, or inability to use, our site; or<\/p>\n<p>9.5.2 use of or reliance on any content displayed on our site.<\/p>\n<p>9.6 In particular, we will not be liable for:<\/p>\n<p>9.6.1 loss of profits, sales, business, or revenue;<\/p>\n<p>9.6.2 business interruption;<\/p>\n<p>9.6.3 loss of anticipated savings;<\/p>\n<p>9.6.4 loss of business opportunity, goodwill or reputation; or<\/p>\n<p>9.6.5 any indirect or consequential loss or damage. If you are a consumer user:<\/p>\n<p>9.7 Please note that we only provide our site for domestic and private use. You agree not to use our site for any commercial or business purposes, and we have no liability to you for any loss of profit, loss of business, business interruption, or loss of business opportunity.<\/p>"
+            }
+          },
+          "1553024382220": {
+            "type": "term",
+            "settings": {
+              "title": "10. Registration",
+              "content": "<p>10.1 In order to use some of the services on our site, you will be required to register with our site. We reserve the right to suspend or terminate access at any time if we believe that your continued use of our services will prejudice others or us. By registering to use the service, you:<\/p>\n<p>10.1.1 confirm that the information you provide is accurate and complete; and<\/p>\n<p>10.1.2 agree to keep your username and password confidential and to take reasonable steps to protect and not to share the login details for your online patient record with anyone;<\/p>\n<p>10.1.3 must not create more than one account with our site;<\/p>"
+            }
+          },
+          "1553024411191": {
+            "type": "term",
+            "settings": {
+              "title": "11. Viruses, hacking and other offences",
+              "content": "<p>11.1 We do not guarantee that our site will be secure or free from bugs or viruses.<\/p>\n<p>11.2 You are responsible for configuring your information technology, computer programmes and platform to access our site. You should use your own virus protection software.<\/p>\n<p>11.3 You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful.<\/p>\n<p>11.4 You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site.<\/p>\n<p>11.5 By breaching this clause 11, you would commit a criminal offence. We will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately.<\/p>\n<p>11.6 We will not be liable for any loss or damage caused by a distributed denial-of-service attack, viruses or other technologically harmful material that may infect your computer equipment, computer programs, data or other proprietary material due to your use of our site or to your downloading of any material posted on it, or on any site linked to it.<\/p>"
+            }
+          },
+          "1553024472146": {
+            "type": "term",
+            "settings": {
+              "title": "12. Linking to our site",
+              "content": "<p>12.1 You may link to our home page, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it in any way whatsoever, but you must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists.<\/p>\n<p>12.2 You must not establish a link from any site that is not owned by you.<\/p>\n<p>12.3 Our site must not be framed on any other site, nor may you create a link to any part of our site other than the home page. We reserve the right to withdraw linking permission without notice.<\/p>\n<p>12.4 If you wish to make any use of material on our site other than that set out above, please address your request to: info@beautyandthebear.com.<\/p>"
+            }
+          },
+          "1553024494920": {
+            "type": "term",
+            "settings": {
+              "title": "13. LINKS FROM OUR SITE",
+              "content": "<p>Where our site contains links to other sites and resources provided by third parties, these links are provided for your information only. We have no control over the contents of those sites or resources, and accept no responsibility for them or for any loss or damage that may arise from your use of them.<\/p>"
+            }
+          },
+          "1553024514742": {
+            "type": "term",
+            "settings": {
+              "title": "14. Jurisdiction and applicable law",
+              "content": "<p>Where our site contains links to other sites and resources provided by third parties, these links are provided for your information only. We have no control over the contents of those sites or resources, and accept no responsibility for them or for any loss or damage that may arise from your use of them.<\/p>"
+            }
+          },
+          "1553024526266": {
+            "type": "term",
+            "settings": {
+              "title": "15. Entire Agreement",
+              "content": "<p>These terms of use and any document expressly referred to in them constitute the whole agreement between us and supersede all previous discussions, correspondence, negotiations, previous arrangement, understanding or agreement between us relating to the use of our site.<\/p>\n<p>If you have any concerns about material which appears on our site or concerns with regards to our services, please contact: info@beautyandthebear.com.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1553024070742",
+          "1553024129398",
+          "1553024152306",
+          "1553024172717",
+          "1553024183334",
+          "1553024193539",
+          "1553024213385",
+          "1553024271749",
+          "1553024312324",
+          "1553024382220",
+          "1553024411191",
+          "1553024472146",
+          "1553024494920",
+          "1553024514742",
+          "1553024526266"
+        ],
+        "settings": {
+        }
+      },
+      "section-page-privacy": {
+        "type": "section-page-privacy",
+        "blocks": {
+          "1553024578884": {
+            "type": "privacy",
+            "settings": {
+              "title": "Introduction",
+              "content": "<p>At Beauty and the Bear we are committed to safeguarding and preserving the privacy of our visitors. These &lsquo;key points&rsquo; summarise some of the more important provisions in our privacy policy. We also recommend that you read the full privacy policy.<\/p>"
+            }
+          },
+          "1553024602112": {
+            "type": "privacy",
+            "settings": {
+              "title": "Information we collect",
+              "content": "<p>When you visit our website, we automatically collect and save your IP address.<\/p>\n<p>Where you volunteer this information (i.e. by filling in an online form to use our services), we will also save your name, delivery address, email address,telephone number, payment records and details of the products you have ordered.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1553024578884",
+          "1553024602112"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+      "1536694346831",
+      "1536694368153",
+      "1536694359004",
+      "1542875435251",
+      "1542875727895",
+      "1542875963319",
+      "1536694352945",
+      "1536694376066",
+      "1536694383065"
+    ]
+  }
+}

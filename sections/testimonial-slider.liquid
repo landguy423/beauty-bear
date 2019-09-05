@@ -1,0 +1,79 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="section-slider">
+    <div class="shell">
+      {% if section.settings.title != blank %}
+      <div class="section__head">
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+      {% endif %}
+      <div class="section__body">
+        <ul class="slider">
+          {% for block in blocks %}
+            <li>
+              <div class="image">
+                <a href="{{ block.settings.link }}" target="_blank">
+                  <img src="{{ block.settings.image | img_url: '480x' }}">
+                </a>
+              </div>
+              <div class="title">
+                <a href="{{ block.settings.link }}" target="_blank">
+                  {{ block.settings.name | upcase }}
+                </a>
+              </div>
+              <p>{{ block.settings.content }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Carousel"
+    }
+  ]
+}
+{% endschema %}

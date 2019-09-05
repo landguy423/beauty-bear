@@ -1,0 +1,140 @@
+{% assign _section = section.settings %}
+
+<header class="header">
+  <div class="shell">
+    <div class="header__inner">
+      <a href="/" class="logo">
+        {{ 'logo.png' | asset_url | img_tag }}
+      </a><!-- /.logo -->
+
+      {% if _section.main_navigation != blank %}
+        {% assign navigation = linklists[_section.main_navigation] %}
+
+        <nav class="nav">
+          <ul>
+            {% for first_level_item in navigation.links %}
+              {% if first_level_item.links.size > 0 %}
+                {% assign has_second_level = true %}
+              {% else %}
+                {% assign has_second_level = false %}
+              {% endif %}
+
+              <li {% if has_second_level %} class="menu-item-has-children" {% endif %}>
+                <a href="{{ first_level_item.url | escape }}">
+                  {{ first_level_item.title | escape }}
+                </a>
+
+                {% if has_second_level %}
+                  <ul class="sub-menu">
+                    <li class="no-link"><a href="#">SHOP NOW</a></li>
+                    {% for second_level_item in first_level_item.links %}
+                      {% if second_level_item.links.size > 0 %}
+                        {% assign has_third_level = true %}
+                      {% else %}
+                        {% assign has_third_level = false %}
+                      {% endif %}
+
+                      <li {% if has_third_level %} class="menu-item-has-children" {% endif %}>
+                        <a href="{{ second_level_item.url | escape }}">{{ second_level_item.title | escape }}</a>
+
+                        {% if has_third_level %}
+                          <ul class="sub-menu">
+                            {% for third_level_item in second_level_item.links %}
+                              <li>
+                                <a href="{{ third_level_item.url | escape }}">{{ third_level_item.title | escape }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul><!-- /.sub-menu -->
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul><!-- /.sub-menu -->
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+
+          <div class="mobile-utilities">
+            <div class="currency-switcher">
+              {% include 'currency-picker' %}
+            </div><!-- /.currency-switcher -->
+
+            <nav class="nav-utilities">
+              <ul>
+                <li>
+                  <a href="/cart">
+                    <i class="fa fa-shopping-bag"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="{% if customer %}/account{% else %}/account/login{% endif %}">
+                    <i class="fa fa-user"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/search">
+                    <i class="fa fa-search"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav><!-- /.nav-utilities -->
+          </div><!-- /.mobile-utilities -->
+        </nav><!-- /.nav -->
+      {% endif %}
+
+      <div class="currency-switcher">
+<!--         <select>
+          <option value="GBP">GBP</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select> -->
+        {% include 'currency-picker' %}
+      </div><!-- /.currency-switcher -->
+
+      <nav class="nav-utilities">
+        <ul>
+          <li>
+            <a href="/cart">
+              <i class="fa fa-shopping-bag"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="{% if customer %}/account{% else %}/account/login{% endif %}">
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="/search">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </nav><!-- /.nav-utilities -->
+
+      <div class="nav-trigger">
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div><!-- /.nav-trigger -->
+    </div><!-- /.header__inner -->
+  </div><!-- /.shell -->
+</header><!-- /.header -->
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_navigation",
+      "label": "Main Navigation"
+    }
+  ]
+}
+{% endschema %}

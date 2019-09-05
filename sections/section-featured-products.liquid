@@ -1,0 +1,203 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="section-products">
+    <div class="shell">
+      <div class="section__head">
+        {% if _section.title != blank %}
+          <h2 class="hidden-xs">{{ _section.title | escape }}</h2>
+        {% endif %}
+
+        {% if _section.title_mobile != blank %}
+          <h2 class="visible-xs-block">{{ _section.title_mobile | escape }}</h2>
+        {% endif %}
+
+        {% if _section.sticker_image != blank %}
+          {{ _section.sticker_image | img_url: '2048x' | img_tag: '', 'sticker' }}
+        {% endif %}
+      </div><!-- /.section__head -->
+
+      <div class="section__body">
+        <ul class="list-products">
+          {% for block in blocks %}
+            {% assign _block = block.settings %}
+
+            {% if _block.product != blank %}
+              {% assign _product = all_products[_block.product] %}
+
+              <li class="product">
+                <div class="product__image">
+                  {% if _block.custom_link != blank %}
+                  <a href="{{ _block.custom_link }}">
+                  {% else %}
+                  <a href="{{ _product.url | within: _product.collections[0] }}">
+                  {% endif %}
+                    {% if _block.foreground_color != blank %}
+                      <div class="product__foreground" style="background-color: {{ _block.foreground_color }}"></div><!-- /.product__foreground -->
+                    {% endif %}
+
+                    {% if _block.background_color != blank %}
+                      <div class="product__background" style="background-color: {{ _block.background_color }}"></div><!-- /.product__background -->
+                    {% endif %}
+
+                    {% if _block.image != blank %}
+                      <img  src="{{ _block.image | img_url: '1024x' }}"
+                      alt="{{ _block.image.alt }}"
+                      sizes="(max-width: 375px) 375vw,
+        		            (max-width: 767px) 767vw,
+        		            (max-width: 1366px) 1366vw,
+        		            (max-width: 1919px) 1919vw,
+        		            2048vw"
+                      srcset="{{ _block.image | img_url: '1920x' }} 1920w,
+        		                  {{ _block.image | img_url: '1366x' }} 1366w,
+        		                  {{ _block.image | img_url: '768x' }} 768w,
+        		                  {{ _block.image | img_url: '375x' }} 375w"
+                       />
+                    {% else %}
+                      <img  src="{{ _product.featured_image | img_url: '1024x' }}"
+                      alt="{{ _product.featured_image.alt }}"
+                      sizes="(max-width: 375px) 375vw,
+        		            (max-width: 767px) 767vw,
+        		            (max-width: 1366px) 1366vw,
+        		            (max-width: 1919px) 1919vw,
+        		            2048vw"
+                      srcset="{{ _product.featured_image | img_url: '1920x' }} 1920w,
+        		                  {{ _product.featured_image | img_url: '1366x' }} 1366w,
+        		                  {{ _product.featured_image | img_url: '768x' }} 768w,
+        		                  {{ _product.featured_image | img_url: '375x' }} 375w"
+                       />
+                    {% endif %}
+                  </a>
+                </div><!-- /.product__image -->
+
+                <div class="product__title">
+                  {% if _block.custom_link != blank %}
+                  <a href="{{ _block.custom_link }}">
+                  {% else %}
+                  <a href="{{ _product.url | within: _product.collections[0] }}">
+                  {% endif %}
+                    {% if _block.title != blank %}
+                      <h3>{{ _block.title | escape }}</h3>
+                    {% else %}
+                      <h3>{{ _product.title | escape }}</h3>
+                    {% endif %}
+                  </a>
+                </div><!-- /.product__title -->
+
+                <div class="product__price">
+                  {% if _block.price != blank %}
+                    <h4>{{ _block.price | escape }} - {{ _product.price | money }}</h4>
+                  {% else %}
+                    <h4>{{ _product.price | money }}</h4>
+                  {% endif %}
+                </div><!-- /.product__price -->
+
+                <div class="product__description">
+                  {% if _block.description != blank %}
+                    <p>
+                      {{ _block.description | escape }}
+                    </p>
+                  {% else %}
+                    <p>
+                      {{ _product.description | truncatewords: 20, '...' }}
+                    </p>
+                  {% endif %}
+                </div><!-- /.product__description -->
+
+                <div class="product__actions">
+                  {% if _block.custom_link != blank %}
+                  <a href="{{ _block.custom_link }}" class="btn btn--pink">
+                  {% else %}
+                  <a href="{{ _product.url | within: _product.collections[0] }}" class="btn btn--pink">
+                  {% endif %}
+                    {{ 'products.product.buy_now' | t }}
+                  </a><!-- /.btn btn--pink -->
+                </div><!-- /.product__actions -->
+              </li><!-- /.product -->
+            {% endif %}
+          {% endfor %}
+        </ul><!-- /.list-products -->
+      </div><!-- /.section__body -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-products -->
+{% endif %}
+
+  {% schema %}
+  {
+    "name": "Featured Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title"
+      },
+      {
+        "type": "text",
+        "id": "title_mobile",
+        "label": "Section Title Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "sticker_image",
+        "label": "Sticker"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "url",
+            "id": "custom_link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "price",
+            "label": "Price"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "foreground_color",
+            "label": "Foreground Color",
+            "default": "#000"
+          },
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#fff"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Products"
+      }
+    ]
+  }
+  {% endschema %}

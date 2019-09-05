@@ -1,0 +1,155 @@
+{% comment %}
+	Forgot Password
+{% endcomment %}
+{% capture recover_customer_password %}
+	{% form 'recover_customer_password', class: 'form form-default form-recover-password' %}
+		{% capture error_recover_email %}{% if form.errors %}error{% endif %}{% endcapture %}
+
+		{% if form.posted_successfully? %}
+			{% assign recover_password = true %}
+		{% endif %}
+
+		{% if form.posted_successfully? %}
+			{% assign reset_success = true %}
+		{% endif %}
+
+		{% if form.errors %}
+			{% assign recover_password_checked = true %}
+			<div class="form-notice error">
+				{{ form.errors | default_errors }}
+			</div><!-- /.form-notice -->
+		{% endif %}
+        <div class="form-body">
+          <div class="form-row">
+            <label for="field-recover-email" class="form-label">{{ 'customer.recover_password.email' | t }}</label>
+
+            <input type="email" value="" name="email" id="field-recover-email" class="field {{ error_recover_email }}" 
+                   placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
+          </div><!-- /.form-row -->
+        </div>
+		<div class="form-action clear">
+			<input type="submit" class="form-btn submit" value="{{ 'customer.recover_password.reset_password' | t }}">
+
+			<span class="link link-customer-login">
+				<label for="btn-form-login">{{ 'customer.recover_password.back_login' | t }}</label>
+			</span>
+		</div><!-- /.form-action -->
+	{% endform %}
+{% endcapture %}
+
+{% comment %}
+	Login
+{% endcomment %}
+{% capture customer_login %}
+	{% form 'customer_login', class: 'form form-default form-login' %}
+		{% capture error_login_email %}{% if form.errors contains "password" %}error{% endif %}{% endcapture %}
+		{% capture error_login_password %}{% if form.errors contains "email" %}error{% endif %}{% endcapture %}
+		
+		{% if form.errors %}
+			<div class="form-notice error">
+				{{ form.errors | default_errors }}
+			</div><!-- /.form-notice -->
+		{% endif %}
+
+		{% if reset_success %}
+			<div class="form-notice success">
+				{{ 'customer.recover_password.success' | t }}
+			</div><!-- /.form-notice -->
+		{% endif %}
+
+		<div class="form-body">
+			<div class="form-row">
+				<label for="field-login-email" class="form-label">{{ 'customer.login.email_address' | t }}</label>
+
+				<input type="email" name="customer[email]" id="field-login-email" class="field {{ error_login_email }}" placeholder="{{ 'customer.login.email' | t }}" value="" autocorrect="off" autocapitalize="off" autofocus />
+			</div><!-- /.form-row -->
+
+			<div class="form-row">
+			  <label for="field-login-password" class="form-label">{{ 'customer.login.password' | t }}</label>
+                
+              <span class="link link-forgot-password">
+				{{ 'customer.login.forgot_password' | t }}
+			  </span>
+
+			  <input type="password" value="" name="customer[password]" id="field-login-password" class="field {{ error_login_password }} password" placeholder="{{ 'customer.login.password' | t }}" />
+			</div><!-- /.form-row -->
+		</div><!-- /.form-body -->
+
+		<div class="form-action clear">
+			<input type="submit" class="form-btn submit" value="{{ 'customer.login.sign_in' | t }}">
+            {% if shop.customer_accounts_optional %}
+            <span class="link link-register">
+              New Customer? {{ 'layout.customer.create_account' | t | customer_register_link }}
+            </span>
+            {% endif %}
+			
+		</div><!-- /.form-action -->
+	{% endform %}
+
+	{% if shop.checkout.guest_login %}
+		{% form 'guest_login', class: 'form form-default form-guest-login'  %}
+			<div class="form-head">
+				<h1>{{ 'customer.login.guest_title' | t }}</h1>
+			</div><!-- /.form-head -->
+
+			<div class="form-action clear">
+				<input type="submit" class="form-btn" value="{{ 'customer.login.guest_continue' | t }}">
+			</div><!-- /.form-action -->
+		{% endform %}
+	{% endif %}
+{% endcapture %}
+
+{% if recover_password_checked %}
+	{% assign login_checked = '' %}
+	{% assign recover_password_checked = 'checked' %}
+{% else %}
+	{% assign login_checked = 'checked' %}
+	{% assign recover_password_checked = '' %}
+{% endif %}
+
+{% comment %}
+	Login View
+{% endcomment %}
+<input type="radio" name="select-form" id="btn-form-login" class="field-hidden" {{ login_checked }} />
+<div class="account-wrapper customer-login">
+  <h1>{{ 'customer.login.title' | t | upcase }}</h1>
+  <div class="form-wrapper">
+    <div class="login-form">
+      {{ customer_login }}
+    </div>
+  </div>
+</div>
+
+
+{% comment %}
+	Forgot Password View
+{% endcomment %}
+<input type="radio" name="select-form" id="btn-form-recover-password" class="field-hidden" {{ recover_password_checked }}/>
+
+<div class="account-wrapper customer-recover">
+  <h1 class="recover-title">{{ 'customer.recover_password.title' | t | upcase }}</h1>
+  <p>We’ll send a message to your registered email address with a reset link. <br/>Remeber to check your junk folder if you don’t see it in your inbox.</p>
+  <div class="form-wrapper">
+    <div class="login-form">
+      {{ recover_customer_password }}
+    </div>
+  </div>
+</div>
+
+<script>
+  jQuery('.link-forgot-password').on('click', function() {
+    console.log('forgot');
+    jQuery('.customer-login').hide();
+    jQuery('.customer-recover').show();
+    jQuery('#btn-form-login').prop('checked', false);
+    jQuery('#btn-form-recover-password').prop('checked', true);
+  });
+  
+  jQuery('.link-customer-login').on('click', function() {
+    console.log('login');
+    jQuery('.customer-recover').hide();
+    jQuery('.customer-login').show();
+    jQuery('#btn-form-login').prop('checked', true);
+    jQuery('#btn-form-recover-password').prop('checked', false);
+  })
+</script>

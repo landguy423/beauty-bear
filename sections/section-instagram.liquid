@@ -1,0 +1,53 @@
+{% assign _section = section.settings %}
+
+<section class="section-instagram">
+  <div class="shell">
+    <div class="section__head">
+      {% if _section.title != blank %}
+        <h3>
+          <a href="https://instagram.com/beautyandthebear" target="_blank">
+          <i class="fab fa-instagram"></i><br>
+          {{ _section.title | escape }}
+          </a>
+        </h3>
+      {% endif %}
+
+      {% if _section.content != blank %}
+        {{ _section.content }}
+      {% endif %}
+    </div><!-- /.section__head -->
+
+    <div class="section__body">
+      <div id="insta-feed"></div>
+    </div><!-- /.section__body -->
+    <a href="https://www.instagram.com/beautyandthebear" target="_blank"><h4>{{ _section.bottom_title | escape }}</h4></a>
+  </div><!-- /.shell -->
+</section><!-- /.section-instagram -->
+
+{% schema %}
+{
+  "name": "Instagram",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+	{
+      "type": "text",
+      "id": "bottom_title",
+      "label": "Section Bottom Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram"
+    }
+  ]
+}
+{% endschema %}

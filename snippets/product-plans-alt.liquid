@@ -1,0 +1,121 @@
+{% assign discount_percentage = subscription_product.discount_percentage | round: 2 %}
+{% assign discount_floor = subscription_product.discount_percentage | floor %}
+{% if discount_percentage == discount_floor %}
+  {% assign discount_percentage = discount_floor %}
+{% endif %}
+
+{% if product.variants.size > 0 %}
+
+  {% for product_option in product.options_with_values %}
+    {% assign option_downCased = product_option.name | downcase %}
+    {% if option_downCased == "supply" %}
+    	{% assign product_contains_subscriptions = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if product_contains_subscriptions %}
+    <div class="product__plan-title">
+      <p>{{ 'products.product.select_plan' | t }}</p>
+    </div><!-- /.product__plan-title -->
+  {% endif %}
+
+  <div class="accordions accordions--product-plans">
+      {% for variant in product.variants %}
+    	{% if forloop.index == 2 %}
+    	  {% assign onemonth_price = variant.price %}
+    	{% endif %}
+        {% assign variant_handled = variant.title | handle %}
+        {% assign variant_title = variant.title | handle | plus: 0 %}
+        {% assign months_supply = variant_title | divided_by: 60 | ceil %}
+        {% if variant_handled != 'default-title' %}
+
+          {% assign discount_percentage = 0 %}
+          {% if variant.price == 1699 %}
+            {% assign discount_percentage = 15.00 %}
+          {% elsif variant.price == 4499 %}
+            {% assign discount_percentage = 29.39 %}
+          {% elsif variant.price == 7999 %}
+            {% assign discount_percentage = 39.18 %}
+          {% endif %}
+
+          {% if discount_percentage > 0 %}
+            {% assign discount_price = variant.price | times: discount_percentage | divided_by: 100.0 %}
+            {% assign variant_temp_price = variant.price | minus: discount_price %}
+            {% assign variant_price = variant_temp_price | money %}
+            {% assign save_variant_price = variant.compare_at_price | minus: variant_temp_price | money %}
+          {% else %}
+            {% assign variant_price = variant.price | money %}
+            {% assign save_variant_price = 0 %}
+          {% endif %}
+		  {% if variant.price == 0 %}
+            <div class="plan-radios simple-pack">
+              <a class="variant_select" data-variant-id="{{ variant.id }}" data-variant-image="{{ variant | img_url: '1024x' }}" href="#{{ forloop.index }}">
+            	<label for="{{ forloop.index }}_radio-2" class="radio one-time {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}">
+                  <input type="radio" name="purchase_type" value="sample_pack" id="{{ forloop.index }}_radio-2" data-variant="{{ variant.id }}" {% if variant.id == product.selected_or_first_available_variant.id %} checked {% endif %}>
+
+                  <span for="{{ forloop.index }}_radio-2">
+                    <h5>{{ 'products.product.sample_pack' | t }}</h5>
+                    <span class="free-mark">{{ 'products.product.free' | t | upcase }}</span>
+                  </span>
+                  <p>Try 10 gummies for free, just pay postage</p>
+                </label>
+              </a>
+    		</div>
+          {% else %}
+          <div class="accordion {% if variant.id == product.selected_or_first_available_variant.id %} active {% endif %}">
+
+              <div class="accordion__head">
+                <a class="variant_select" data-variant-id="{{ variant.id }}" data-variant-image="{{ variant | img_url: '1024x' }}" href="#{{ forloop.index }}">
+                  <div class="product__title">
+                    <h3 class="month-{{months_supply}}">{{ months_supply }} {% if months_supply == 1 %} {{ 'products.product.month' | t }} {% else %} {{ 'products.product.months' | t }} {% endif %} {{ 'products.product.supply' | t }} {{ variant.price | money }}{{ variant.compare_at_price | money }}</h3>
+                    {% if variant.compare_at_price %}
+                    <p class="price-note">
+                      {% if forloop.index == 2 %}
+                        Popular (save {{ variant.compare_at_price | minus: variant.price | money }})
+                      {% elsif forloop.index == 3 %}
+                        Best value (save {{ variant.compare_at_price | minus: variant.price | money }})
+                      {% endif %}
+                    </p>
+                    {% endif %}
+                  </div><!-- /.product__title -->
+                </a>
+              </div><!-- /.accordion__head -->
+
+              <div class="accordion__body {% if variant.id == product.selected_or_first_available_variant.id %} active {% endif %}" id="{{ forloop.index }}" {% if variant.id == product.selected_or_first_available_variant.id %} style="display: block;" {% endif %}>
+                <div class="plan-radios">
+                  <label for="{{ forloop.index }}_radio-2" class="radio one-time {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}">
+                    <input type="radio" name="purchase_type" value="onetime" id="{{ forloop.index }}_radio-2" data-variant="{{ variant.id }}" {% if variant.id == product.selected_or_first_available_variant.id %} checked {% endif %}>
+
+                    <span for="{{ forloop.index }}_radio-2">
+                      <h5>{{ 'products.product.one_time' | t }} {{ variant.price | money }}</h5>
+                    </span>
+                  </label><!-- /.radio -->
+
+                  {% comment %}
+                  {% if product.tags contains 'subscription_widget' %}
+                  <label for="{{ forloop.index }}_radio-1" class="radio">
+                    <input type="radio" name="purchase_type" value="autodeliver" id="{{ forloop.index }}_radio-1" data-frequency="{{ months_supply }}" data-variant="{{ variant.id }}">
+
+                    <span for="{{ forloop.index }}_radio-1">
+                      <h5>{{ 'products.product.subscribe_save' | t }} {{ variant_price }}</h5>
+
+                      {% if months_supply == 1 %}
+                        <p>{{ 'products.product.delivered_every' | t }} {{ 'products.product.month' | t }}, {{ 'products.product.cancel_anytime' | t }}</p>
+                      {% else %}
+                        <p>{{ 'products.product.delivered_every' | t }} {{ months_supply }} {{ 'products.product.months' | t }}, {{ 'products.product.cancel_anytime' | t }}</p>
+                      {% endif %}
+                    </span>
+                  </label><!-- /.radio -->
+                  {% endif %}
+                  {% endcomment %}
+
+                </div><!-- /.plan-radios -->
+              </div><!-- /.accordion__body -->
+
+
+          </div><!-- /.accordion -->
+    {% endif %}
+        {% endif %}
+      {% endfor %}
+  </div><!-- /.accordions -->
+{% endif %}

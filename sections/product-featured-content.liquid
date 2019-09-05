@@ -1,0 +1,67 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="section-product-features">
+    <div class="shell">
+      {% if _section.title != blank %}
+        <div class="section__head">
+          <h3>
+            {{ _section.title | escape | upcase }}
+          </h3>
+        </div><!-- /.section__head -->
+      {% endif %}
+
+      <div class="section__body">
+        <ul class="list-product-features">
+          {% for block in blocks %}
+            {% assign _block = block.settings %}
+
+            {% if _block.title != blank and _block.image != blank %}
+              <li>
+                <div class="title">{{ _block.title | escape }}</div>
+                {{ _block.image | img_url: '200x' | img_tag }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured Content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Featured Content"
+    }
+  ]
+}
+{% endschema %}

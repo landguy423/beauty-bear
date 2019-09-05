@@ -1,0 +1,52 @@
+{% assign _section = section.settings %}
+{% assign blocks = section.blocks %}
+
+{% if blocks.size > 0 %}
+  <section class="page-content section-faqs">
+    <div class="shell">
+      <div class="section__body">
+        <div class="accordion-container">
+          {% for block in blocks %}
+          <div class="faq-c">
+            <div class="faq-q">{{ block.settings.question }}<i class="fa fa-chevron-down faq-t"></i></div>
+            <div class="faq-a">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "FAQs",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs"
+    }
+  ]
+}
+{% endschema %}
